@@ -15,6 +15,9 @@ quartiles <- temperature[, {
   q.vec <- quantile(degrees.C)
   q.list <- as.list(q.vec)
   names(q.list) <- paste0("quantile", sub("%", "", names(q.list)))
+  q.list$measurements <- .N
+  q.list$first.time <- min(hours.after.midnight)
+  q.list$last.time <- max(hours.after.midnight)
   do.call(data.table, q.list)
 }, by=.(day, day.POSIXct)]
 
