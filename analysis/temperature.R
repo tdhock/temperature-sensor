@@ -1,4 +1,5 @@
-works_with_R("3.2.2", data.table="1.9.6")
+works_with_R("3.2.2", data.table="1.9.6",
+             RJSONIO="1.3.0")
 
 temperature <- fread("../time_degreesC.log")
 setnames(temperature, c("datetime.str", "degrees.C"))
@@ -19,11 +20,51 @@ quartiles <- temperature[, {
   q.list$first.time <- min(hours.after.midnight)
   q.list$last.time <- max(hours.after.midnight)
   do.call(data.table, q.list)
-}, by=.(day, day.POSIXct)]
+}, by=.(day, day.str, day.POSIXct)]
 
 seconds.in.a.day <- 60 * 60 * 24 
 half.day <- seconds.in.a.day/2
 quartiles[, half.before := day.POSIXct - half.day]
 quartiles[, half.after := day.POSIXct + half.day]
 
-save(temperature, quartiles, file="temperature.RData")
+day.vec <- unique(quartiles[23 < last.time, day.str])
+dir.create("history", showWarnings=FALSE)
+file.vec <- file.path("history", paste0(day.vec, ".json"))
+names(file.vec) <- gsub("-", "", day.vec)
+missing.vec <- file.vec[!file.exists(file.vec)]
+for(date.str in names(missing.vec)){
+  json.path <- missing.vec[[date.str]]
+  json.url <- sprintf(
+    "http://api.wunderground.com/api/%s/history_%s/q/Canada/Montreal.json",
+    wunderground.key, date.str)
+  download.file(json.url, json.path)
+}
+
+json.file.vec <- Sys.glob(file.path("history", "*.json"))
+outside.list <- list()
+for(json.file in json.file.vec){
+  L <- fromJSON(json.file)
+  date.mat <- sapply(L$history$observations, "[[", "date")
+  date.dt <- data.table(t(date.mat))
+  date.dt$degrees.F <- as.numeric(sapply(L$history$observations, "[[", "tempi"))
+  date.dt[, degrees.C := (degrees.F - 32) * 5 / 9]
+  date.dt[, time.str := paste0(year, mon, mday, hour, min)]
+  date.dt[, hour.num := as.numeric(hour)]
+  date.dt[, time.POSIXct := as.POSIXct(strptime(time.str, "%Y%m%d%H%M"))]
+  outside.list[[json.file]] <- date.dt
+}
+outside <- do.call(rbind, outside.list)
+outside[, day.str := strftime(time.POSIXct, "%Y-%m-%d")]
+outside[, day.POSIXct := as.POSIXct(strptime(day.str, "%Y-%m-%d"))]
+outside[, day := strftime(day.POSIXct, "%d %b %Y")]
+
+outside.quartiles <- outside[, {
+  q.vec <- quantile(degrees.C)
+  q.list <- as.list(q.vec)
+  names(q.list) <- paste0("quantile", sub("%", "", names(q.list)))
+  q.list$measurements <- .N
+  do.call(data.table, q.list)
+}, by=.(day, day.str, day.POSIXct)]
+
+save(temperature, quartiles, outside, outside.quartiles,
+     file="temperature.RData")
