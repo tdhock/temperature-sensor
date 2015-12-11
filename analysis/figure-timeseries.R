@@ -46,6 +46,16 @@ data.colors <- c(
   recommended="#BEBADA",
   Wunderground="#8DD3C7")
 
+min.hour <- 9
+max.hour <- 17
+work.hours <- data.table(
+  min.hour,
+  max.hour)
+work.labels <- data.table(
+  hour=c(min.hour, max.hour),
+  hjust=c(1, 0),
+  label=paste("work", c("starts", "ends")))
+
 viz <- list(
   title=list("Temperature in Bioinformatics office and outside in Montreal"),
   days=ggplot()+
@@ -114,6 +124,16 @@ viz <- list(
   selector.types=list(day="multiple"),
   first=list(day=full.days[.N, day]),
   oneDay=ggplot()+
+    geom_widerect(aes(ymin=min.C, ymax=max.C,
+                      showSelected=data.type,
+                      fill=data.type),
+                  color=NA,
+                  data=data.table(recommendation, location="inside"))+
+    geom_tallrect(aes(xmin=min.hour, xmax=max.hour),
+                  alpha=0.25,
+                  data=work.hours)+
+    geom_text(aes(hour, 21, hjust=hjust, label=label),
+              data=data.table(work.labels, location="inside"))+
     ggtitle("Details of selected days")+
     theme_bw()+
     theme_animint(width=1000)+
@@ -125,11 +145,6 @@ viz <- list(
     coord_cartesian(xlim=c(0, 26.2))+
     scale_x_continuous("hours after midnight", breaks=0:24)+
     ylab("temperature (degrees C)")+
-    geom_widerect(aes(ymin=min.C, ymax=max.C,
-                      showSelected=data.type,
-                      fill=data.type),
-                  color=NA,
-                  data=data.table(recommendation, location="inside"))+
     geom_text(aes(hours.after.midnight, degrees.C,
                   showSelected2=data.type,
                   label=day,

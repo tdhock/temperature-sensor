@@ -5,8 +5,12 @@ To answer that question I attached an [[https://abra-electronics.com/ics-semicon
 [[https://abra-electronics.com/robotics-embedded-electronics/arduino-boards/ard-uno-arduino-uno-compatible-atmega16u2-board.html][Arduino]], which I [[file:LM35_temperature_sensor.ino][programmed to print temperature in degrees Celsius]]. I
 [[file:log_temp_every_minute.sh][read data from the Arduino and write to a log file every minute]], and
 get outside temperature in Montreal from [[http://www.wunderground.com/weather/api/d/docs?d%3Ddata/history][Wunderground's excellent web API]]. 
+I [[file:analysis/figure-timeseries.R][coded a visualization of these temperature data]] using [[https://github.com/tdhock/animint][animint]].
 
 *** 11 Dec 2015
+
+Second data viz with band for work start and end
+http://bl.ocks.org/tdhock/raw/3619a44c22d311c3f8ec/
 
 First data viz on the web for discussion
 http://bl.ocks.org/tdhock/raw/5d409cbf9f23623b500a/
