@@ -4,8 +4,13 @@ Does the McGill Bioinformatics office comply with
 To answer that question I attached an [[https://abra-electronics.com/ics-semiconductors/linear-series/lm35dz-temperature-sensor-lm35dz.html][LM35 temperature sensor]] to an
 [[https://abra-electronics.com/robotics-embedded-electronics/arduino-boards/ard-uno-arduino-uno-compatible-atmega16u2-board.html][Arduino]], which I [[file:LM35_temperature_sensor.ino][programmed to print temperature in degrees Celsius]]. I
 [[file:log_temp_every_minute.sh][read data from the Arduino and write to a log file every minute]], and
-get outside temperature in Montreal from [[http://www.wunderground.com/weather/api/d/docs?d%3Ddata/history][Wunderground's excellent web API]]. 
-I [[file:analysis/figure-timeseries.R][coded a visualization of these temperature data]] using [[https://github.com/tdhock/animint][animint]].
+get [[file:analysis/history/][historical outside temperatures in Montreal]] from [[http://www.wunderground.com/weather/api/d/docs?d%3Ddata/history][Wunderground's
+excellent web API]] ([[file:analysis/temperature.R][R script for downloading]]). I [[file:analysis/figure-timeseries.R][coded a
+visualization of these temperature data]] using [[https://github.com/tdhock/animint][animint]].
+
+*** TODOs
+
+Measure humidity as well as temperature with [[https://abra-electronics.com/sensors/sensors-temperature-en/dht22-temperature-humidity-sensor.html][DHT22]].
 
 *** 11 Dec 2015
 

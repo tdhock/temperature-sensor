@@ -34,6 +34,7 @@ names(file.vec) <- gsub("-", "", day.vec)
 missing.vec <- file.vec[!file.exists(file.vec)]
 for(date.str in names(missing.vec)){
   json.path <- missing.vec[[date.str]]
+  ## wunderground.key is defined in my ~/.Rprofile
   json.url <- sprintf(
     "http://api.wunderground.com/api/%s/history_%s/q/Canada/Montreal.json",
     wunderground.key, date.str)
