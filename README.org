@@ -1,3 +1,19 @@
+Does the McGill Bioinformatics office comply with 
+[[http://www.ccohs.ca/oshanswers/phys_agents/thermal_comfort.html][Canada's guidelines for thermal confort for office work]]?
+
+To answer that question I attached an [[https://abra-electronics.com/ics-semiconductors/linear-series/lm35dz-temperature-sensor-lm35dz.html][LM35 temperature sensor]] to an
+[[https://abra-electronics.com/robotics-embedded-electronics/arduino-boards/ard-uno-arduino-uno-compatible-atmega16u2-board.html][Arduino]], which I [[file:LM35_temperature_sensor.ino][programmed to print temperature in degrees Celsius]]. I
+[[file:log_temp_every_minute.sh][read data from the Arduino and write to a log file every minute]], and
+get outside temperature in Montreal from [[http://www.wunderground.com/weather/api/d/docs?d%3Ddata/history][Wunderground's excellent web API]]. 
+
+*** 11 Dec 2015
+
+First data viz on the web for discussion
+http://bl.ocks.org/tdhock/raw/5d409cbf9f23623b500a/
+
+It seems like the lab is hotter than the recommended maximum (23°C)
+for most of the hours in a typical workday (9h-17h).
+
 *** 10 Dec 2015
 
 Haig's idea to compare with outside temperature (from wunderground.com
