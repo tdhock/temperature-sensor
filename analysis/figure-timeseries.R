@@ -136,13 +136,13 @@ viz <- list(
               data=data.table(work.labels, location="inside"))+
     ggtitle("Details of selected days")+
     theme_bw()+
-    theme_animint(width=1000)+
+    theme_animint(width=1150)+
     theme(panel.margin=grid::unit(0, "lines"))+
     facet_grid(location ~ ., scales="free")+
     guides(color="none", fill="none")+
     scale_color_manual(values=data.colors)+
     scale_fill_manual(values=data.colors)+
-    coord_cartesian(xlim=c(0, 26.2))+
+    coord_cartesian(xlim=c(0, 28))+
     scale_x_continuous("hours after midnight", breaks=0:24)+
     ylab("temperature (degrees C)")+
     geom_text(aes(hours.after.midnight, degrees.C,

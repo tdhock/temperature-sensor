@@ -7,7 +7,7 @@ temperature[, datetime.POSIXct := as.POSIXct(
   strptime(datetime.str, "%Y-%m-%d_%H:%M"))]
 temperature[, day.str := strftime(datetime.POSIXct, "%Y-%m-%d")]
 temperature[, day.POSIXct := as.POSIXct(strptime(day.str, "%Y-%m-%d"))]
-temperature[, day := strftime(day.POSIXct, "%d %b %Y")]
+temperature[, day := strftime(day.POSIXct, "%A %d %b %Y")]
 temperature[, hours.only := as.integer(strftime(datetime.POSIXct, "%H"))]
 temperature[, minutes.only := as.integer(strftime(datetime.POSIXct, "%M"))]
 temperature[, hours.after.midnight := hours.only + minutes.only/60]
@@ -57,7 +57,7 @@ for(json.file in json.file.vec){
 outside <- do.call(rbind, outside.list)
 outside[, day.str := strftime(time.POSIXct, "%Y-%m-%d")]
 outside[, day.POSIXct := as.POSIXct(strptime(day.str, "%Y-%m-%d"))]
-outside[, day := strftime(day.POSIXct, "%d %b %Y")]
+outside[, day := strftime(day.POSIXct, "%A %d %b %Y")]
 
 outside.quartiles <- outside[, {
   q.vec <- quantile(degrees.C)
