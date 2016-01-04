@@ -1,7 +1,7 @@
 works_with_R("3.2.2", data.table="1.9.6",
              RJSONIO="1.3.0")
 
-temperature <- fread("../time_degreesC.log")
+temperature <- fread("grep ' ' ../time_degreesC.log")
 setnames(temperature, c("datetime.str", "degrees.C"))
 temperature[, datetime.POSIXct := as.POSIXct(
   strptime(datetime.str, "%Y-%m-%d_%H:%M"))]
@@ -11,6 +11,14 @@ temperature[, day := strftime(day.POSIXct, "%A %d %b %Y")]
 temperature[, hours.only := as.integer(strftime(datetime.POSIXct, "%H"))]
 temperature[, minutes.only := as.integer(strftime(datetime.POSIXct, "%M"))]
 temperature[, hours.after.midnight := hours.only + minutes.only/60]
+holiday.vec <- c(
+  sprintf("2015-12-%02d", 19:31),
+  sprintf("2016-01-%02d", 1:3))
+temperature[, is.weekend := grepl("Sat|Sun", day)]
+temperature[, is.holiday := day.str %in% holiday.vec]
+temperature[, work.status := ifelse(
+                            is.holiday|is.weekend, "day off", "work day")]
+
 
 quartiles <- temperature[, {
   q.vec <- quantile(degrees.C)
@@ -20,7 +28,7 @@ quartiles <- temperature[, {
   q.list$first.time <- min(hours.after.midnight)
   q.list$last.time <- max(hours.after.midnight)
   do.call(data.table, q.list)
-}, by=.(day, day.str, day.POSIXct)]
+}, by=.(day, day.str, day.POSIXct, work.status)]
 
 seconds.in.a.day <- 60 * 60 * 24 
 half.day <- seconds.in.a.day/2

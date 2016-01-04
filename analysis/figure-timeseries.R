@@ -6,7 +6,7 @@ works_with_R("3.2.2",
 load("temperature.RData")
 
 outside[, data.type := "Wunderground"]
-temperature[, data.type := "sensor"]
+temperature[, data.type := paste("sensor", work.status)]
 
 last.times <- temperature[, {
   data.table(hours.after.midnight, data.type, degrees.C)[.N,]
@@ -16,8 +16,9 @@ outside.last.times <- outside[, {
   data.table(hour.num, data.type="Wunderground", degrees.C)[.N,]
 }, by=.(day, day.POSIXct)]
 
-quartiles[, data.type := "sensor"]
+quartiles[, data.type := paste("sensor", work.status)]
 full.days <- quartiles[first.time < 1 & 23 < last.time, ]
+full.days[, location := "inside" ]
 
 quartile.labels <- full.days[.N, {
   data.table(day.POSIXct,
@@ -42,7 +43,9 @@ recommendation <- data.table(
   data.type="recommended")
 outside.quartiles[, data.type := "Wunderground"]
 data.colors <- c(
-  sensor="grey50",
+  "sensor work day"="grey40",
+  "sensor day off"="grey60",
+  "sensor"="grey50",
   recommended="#BEBADA",
   Wunderground="#8DD3C7")
 
@@ -72,23 +75,42 @@ viz <- list(
     geom_widerect(aes(ymin=min.C, ymax=max.C, fill=data.type),
                   color=NA,
                   data=data.table(recommendation, location="inside"))+
-    geom_ribbon(aes(day.POSIXct,
-                    fill=data.type,
-                    ymin=quantile0, ymax=quantile25),
-                color=NA,
-                alpha=0.75,
-                data=data.table(full.days, location="inside"))+
-    geom_ribbon(aes(day.POSIXct,
-                    fill=data.type,                    
-                    ymin=quantile75, ymax=quantile100),
-                color=NA,
-                alpha=0.75,
-                data=data.table(full.days, location="inside"))+
-    geom_line(aes(day.POSIXct, quantile50,
-                  showSelected=data.type,
-                  color=data.type),
+    geom_rect(aes(xmin=half.before, xmax=half.after,
+                  fill=data.type,
+                  ymin=quantile0, ymax=quantile25),
               alpha=0.75,
-              data=data.table(full.days, location="inside"))+
+              color=NA,
+              data=full.days[quantile0 != quantile25, ])+
+    geom_rect(aes(xmin=half.before, xmax=half.after,
+                  fill=data.type,
+                  ymin=quantile75, ymax=quantile100),
+              alpha=0.75,
+              color=NA,
+              data=full.days[quantile75 != quantile100, ])+
+    geom_point(aes(day.POSIXct, quantile50,
+                   showSelected=data.type,
+                   fill=data.type),
+               alpha=0.75,
+               shape=21,
+               color=NA,
+               data=full.days)+
+    ## geom_ribbon(aes(day.POSIXct,
+    ##                 fill=data.type,
+    ##                 ymin=quantile0, ymax=quantile25),
+    ##             color=NA,
+    ##             alpha=0.75,
+    ##             data=data.table(full.days, location="inside"))+
+    ## geom_ribbon(aes(day.POSIXct,
+    ##                 fill=data.type,                    
+    ##                 ymin=quantile75, ymax=quantile100),
+    ##             color=NA,
+    ##             alpha=0.75,
+    ##             data=data.table(full.days, location="inside"))+
+    ## geom_line(aes(day.POSIXct, quantile50,
+    ##               showSelected=data.type,
+    ##               color=data.type),
+    ##           alpha=0.75,
+    ##           data=data.table(full.days, location="inside"))+
     geom_text(aes(day.POSIXct, degrees.C,
                   showSelected=data.type,
                   label=label),
@@ -154,13 +176,14 @@ viz <- list(
               hjust=0,
               data=data.table(last.times, location="inside"))+
     geom_line(aes(hours.after.midnight, degrees.C,
+                  color=data.type,
                   showSelected2=data.type,
                   showSelected=day,
                   group=day,
                   key=day,
                   clickSelects=day),
               size=4,
-              alpha=0.5,
+              alpha=0.75,
               data=data.table(temperature, location="inside"))+
     ## Outside:
     geom_text(aes(hour.num, degrees.C,
@@ -181,6 +204,27 @@ viz <- list(
               size=4,
               alpha=0.5,
               data=data.table(outside, location="outside")))
+seg.if.equal <- list(
+  paste0("quantile", c(0, 25)),
+  paste0("quantile", c(75, 100)))
+for(two.cols in seg.if.equal){
+  col1 <- two.cols[[1]]
+  col2 <- two.cols[[2]]
+  vec1 <- full.days[[col1]]
+  vec2 <- full.days[[col2]]
+  is.same <- vec1 == vec2
+  if(any(is.same)){
+    sub.dt <- full.days[is.same, ]
+    viz$days <- viz$days +
+      geom_segment(aes_string(
+        x="half.before", y=col1, 
+        color="data.type",
+        showSelected="data.type",
+        xend="half.after", yend=col1),
+                   alpha=0.75,
+                   data=sub.dt)
+  }
+}
 
 animint2dir(viz, "figure-timeseries")
 
