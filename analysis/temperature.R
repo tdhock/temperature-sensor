@@ -47,6 +47,7 @@ for(date.str in names(missing.vec)){
     "http://api.wunderground.com/api/%s/history_%s/q/Canada/Montreal.json",
     wunderground.key, date.str)
   download.file(json.url, json.path)
+  Sys.sleep(6) ## There is a limit of 10 calls per minute.
 }
 
 json.file.vec <- Sys.glob(file.path("history", "*.json"))
