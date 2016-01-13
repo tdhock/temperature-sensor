@@ -1,16 +1,30 @@
-works_with_R("3.2.2", data.table="1.9.6",
+works_with_R("3.2.3", data.table="1.9.7",
              RJSONIO="1.3.0")
 
-temperature <- fread("grep ' ' ../time_degreesC.log")
-setnames(temperature, c("datetime.str", "degrees.C"))
-temperature[, datetime.POSIXct := as.POSIXct(
+temp.every.minute <- fread("grep ' ' ../time_degreesC.log")
+setnames(temp.every.minute, c("datetime.str", "degrees.C"))
+temp.every.minute[, datetime.POSIXct := as.POSIXct(
   strptime(datetime.str, "%Y-%m-%d_%H:%M"))]
-temperature[, day.str := strftime(datetime.POSIXct, "%Y-%m-%d")]
+temp.every.minute[, hour.str := strftime(datetime.POSIXct, "%Y-%m-%d_%H")]
+temp.every.minute[, hour.POSIXct := as.POSIXct(strptime(hour.str, "%Y-%m-%d_%H"))]
+temperature <- temp.every.minute[, {
+  data.table(degrees.C=mean(degrees.C),
+             min.POSIXct=min(datetime.POSIXct),
+             max.POSIXct=max(datetime.POSIXct))
+}, by=hour.POSIXct]
+
+temperature[, day.str := strftime(hour.POSIXct, "%Y-%m-%d")]
 temperature[, day.POSIXct := as.POSIXct(strptime(day.str, "%Y-%m-%d"))]
 temperature[, day := strftime(day.POSIXct, "%A %d %b %Y")]
-temperature[, hours.only := as.integer(strftime(datetime.POSIXct, "%H"))]
-temperature[, minutes.only := as.integer(strftime(datetime.POSIXct, "%M"))]
-temperature[, hours.after.midnight := hours.only + minutes.only/60]
+get.hour <- function(time.vec){
+  stopifnot(inherits(time.vec, "POSIXct"))
+  hours.only <- as.integer(strftime(time.vec, "%H"))
+  minutes.only <- as.integer(strftime(time.vec, "%M"))
+  hours.only + minutes.only/60
+}
+temperature[, hours.after.midnight := get.hour(hour.POSIXct)]
+temperature[, min.hours := get.hour(min.POSIXct)]
+temperature[, max.hours := get.hour(max.POSIXct)]
 holiday.vec <- c(
   sprintf("2015-12-%02d", 19:31),
   sprintf("2016-01-%02d", 1:3))
@@ -25,8 +39,8 @@ quartiles <- temperature[, {
   q.list <- as.list(q.vec)
   names(q.list) <- paste0("quantile", sub("%", "", names(q.list)))
   q.list$measurements <- .N
-  q.list$first.time <- min(hours.after.midnight)
-  q.list$last.time <- max(hours.after.midnight)
+  q.list$first.time <- min(min.hours)
+  q.list$last.time <- max(max.hours)
   do.call(data.table, q.list)
 }, by=.(day, day.str, day.POSIXct, work.status)]
 
