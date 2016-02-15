@@ -2,7 +2,7 @@ works_with_R("3.2.3",
              gistr="0.3.6",
              data.table="1.9.7",
              "tdhock/ggplot2@a8b06ddb680acdcdbd927773b1011c562134e4d2",
-             "tdhock/animint@3b1f84ec926ffbd765f0aa004596e43203750fd4")
+             "tdhock/animint@2a462853491b985ee90e86ef7e017ecd51d2921f")
 
 load("temperature.RData")
 
@@ -112,11 +112,11 @@ viz <- list(
     ##               color=data.type),
     ##           alpha=0.75,
     ##           data=data.table(full.days, location="inside"))+
-    geom_text(aes(day.POSIXct, degrees.C,
-                  showSelected=data.type,
-                  label=label),
-              data=data.table(quartile.labels, location="inside"),
-              hjust=0)+
+    ## geom_text(aes(day.POSIXct, degrees.C,
+    ##               showSelected=data.type,
+    ##               label=label),
+    ##           data=data.table(quartile.labels, location="inside"),
+    ##           hjust=0)+
     ## Outside:
     geom_ribbon(aes(day.POSIXct,
                     fill=data.type,
@@ -135,11 +135,11 @@ viz <- list(
                   color=data.type),
               alpha=0.75,
               data=data.table(outside.quartiles, location="outside"))+
-    geom_text(aes(day.POSIXct, degrees.C,
-                  showSelected=data.type,
-                  label=label),
-              data=data.table(outside.quartile.labels, location="outside"),
-              hjust=0)+
+    ## geom_text(aes(day.POSIXct, degrees.C,
+    ##               showSelected=data.type,
+    ##               label=label),
+    ##           data=data.table(outside.quartile.labels, location="outside"),
+    ##           hjust=0)+
     geom_tallrect(aes(xmin=half.before, xmax=half.after,
                       clickSelects=day),
                   alpha=0.5,
