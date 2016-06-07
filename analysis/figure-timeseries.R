@@ -1,8 +1,9 @@
 works_with_R("3.2.3",
              gistr="0.3.6",
              data.table="1.9.7",
+             "hadley/scales@2c3edf45de56d617444dc38e47e0404173817886",
              "tdhock/ggplot2@a8b06ddb680acdcdbd927773b1011c562134e4d2",
-             "tdhock/animint@2a462853491b985ee90e86ef7e017ecd51d2921f")
+             "tdhock/animint@6b1c9e588b03f632cd39cdec9bbcfa730db9e889")
 
 load("temperature.RData")
 

@@ -1,7 +1,7 @@
 works_with_R("3.2.3", data.table="1.9.7",
              RJSONIO="1.3.0")
 
-temp.every.minute <- fread("grep ' ' ../time_degreesC.log")
+temp.every.minute <- fread("grep ' ' ../time_degreesC.log|tr -cd '\\11\\12\\15\\40-\\176'")
 setnames(temp.every.minute, c("datetime.str", "degrees.C"))
 temp.every.minute[, datetime.POSIXct := as.POSIXct(
   strptime(datetime.str, "%Y-%m-%d_%H:%M"))]
