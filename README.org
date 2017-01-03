@@ -1,5 +1,5 @@
-Does the McGill Bioinformatics office comply with 
-[[http://www.ccohs.ca/oshanswers/phys_agents/thermal_comfort.html][Canada's guidelines for thermal confort for office work]]?
+Does the McGill Bioinformatics office (740 Dr Penfield, room 4200)
+comply with [[http://www.ccohs.ca/oshanswers/phys_agents/thermal_comfort.html][Canada's guidelines for thermal confort for office work]]?
 
 To answer that question I attached an [[https://abra-electronics.com/ics-semiconductors/linear-series/lm35dz-temperature-sensor-lm35dz.html][LM35 temperature sensor]] to an
 [[https://abra-electronics.com/robotics-embedded-electronics/arduino-boards/ard-uno-arduino-uno-compatible-atmega16u2-board.html][Arduino]], which I [[file:LM35_temperature_sensor.ino][programmed to print temperature in degrees Celsius]]. I
@@ -8,11 +8,33 @@ get [[file:analysis/history/][historical outside temperatures in Montreal]] from
 excellent web API]] ([[file:analysis/temperature.R][R script for downloading]]). I [[file:analysis/figure-timeseries.R][coded a
 visualization of these temperature data]] using [[https://github.com/tdhock/animint][animint]].
 
+Interactive data viz: http://cbio.mines-paristech.fr/~thocking/figure-timeseries/
+
+Raw data from sensor: [[file:time_degreesC.log]] (some minutes appear more
+than once, since sometimes there was more than one instance of the
+[[file:log_temp_every_minute.sh]] script running).
+
+Cleaned data matrix from sensor: [[file:analysis/degreesC.csv]]. One row
+for every day. 1441 columns, one for the day and one for every minute
+(60 * 24 = 1440). Entries of the matrix are mean temperature in
+degrees Celsius, or missing if there were no data recorded during that
+minute.
+
 *** TODOs
 
 Measure humidity as well as temperature with [[https://abra-electronics.com/sensors/sensors-temperature-en/dht22-temperature-humidity-sensor.html][DHT22]].
 
 Call the Facilities Call Centre (FCC) 514-398-4555.
+
+*** 3 Jan 2016
+
+[[file:analysis/figure-outliers.R]] plots the temperature at every minute
+for some parts of the data where I suspect the measurements were
+incorrect.
+
+[[file:analysis/temperature.R]] now saves [[file:analysis/degreesC.csv]] which
+is a matrix for every minute (currently only 5MB, compare with raw
+data file [[file:time_degreesC.log]] which is currently 20MB).
 
 *** 12 Sept 2016
 

@@ -6,8 +6,27 @@ setnames(temp.every.minute, c("datetime.str", "degrees.C"))
 temp.every.minute[, datetime.POSIXct := as.POSIXct(
   strptime(datetime.str, "%Y-%m-%d_%H:%M"))]
 temp.every.minute[, hour.str := strftime(datetime.POSIXct, "%Y-%m-%d_%H")]
+temp.every.minute[, date.str := strftime(datetime.POSIXct, "%Y-%m-%d")]
+temp.every.minute[, minute.str := strftime(datetime.POSIXct, "%H:%M")]
 temp.every.minute[, hour.POSIXct := as.POSIXct(strptime(hour.str, "%Y-%m-%d_%H"))]
-temperature <- temp.every.minute[, {
+
+temp.unique <- temp.every.minute[, list(
+  observations=.N,
+  mean.degrees.C=mean(degrees.C)
+  ), by=.(datetime.POSIXct, minute.str, date.str)]
+temp.wide <- dcast(temp.unique, date.str ~ minute.str, value.var="mean.degrees.C")
+fwrite(temp.wide, "degreesC.csv")
+
+outlier.list <- list(
+  c("2016-11-18 18:24:00", "2016-11-18 18:46:00"),
+  c("2016-10-19 03:00", "2016-10-19 06:55"))
+is.outlier <- rep(FALSE, nrow(temp.every.minute))
+for(outlier.vec in outlier.list){
+  lim.vec <- strptime(outlier.vec, "%Y-%m-%d %H:%M")
+  this.outlier <- temp.every.minute[, lim.vec[1] < datetime.POSIXct & datetime.POSIXct < lim.vec[2] ]
+  is.outlier <- is.outlier | this.outlier
+}
+temperature <- temp.every.minute[!is.outlier, {
   data.table(degrees.C=mean(degrees.C),
              min.POSIXct=min(datetime.POSIXct),
              max.POSIXct=max(datetime.POSIXct))
