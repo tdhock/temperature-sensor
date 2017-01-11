@@ -61,6 +61,8 @@ work.labels <- data.table(
   hjust=c(1, 0),
   label=paste("work", c("starts", "ends")))
 
+outside.hlines <- data.table(degreesC=0, location="outside")
+
 viz <- list(
   title=list("Temperature in Bioinformatics office and outside in Montreal"),
   days=ggplot()+
@@ -74,6 +76,7 @@ viz <- list(
     facet_grid(location ~ ., scales="free")+
     xlab("day")+
     ylab("temperature (degrees C)")+
+    geom_hline(aes(yintercept=degreesC), data=outside.hlines, color="grey")+
     geom_widerect(aes(ymin=min.C, ymax=max.C, fill=data.type),
                   color=NA,
                   data=data.table(recommendation, location="inside"))+
@@ -148,6 +151,7 @@ viz <- list(
   selector.types=list(day="multiple"),
   first=list(day=full.days[.N, day]),
   oneDay=ggplot()+
+    geom_hline(aes(yintercept=degreesC), data=outside.hlines, color="grey")+
     geom_widerect(aes(ymin=min.C, ymax=max.C,
                       showSelected=data.type,
                       fill=data.type),
