@@ -1,0 +1,945 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "history": 1
+  }
+	}
+		,
+	"history": {
+		"date": {
+		"pretty": "February 5, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "00",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "February 5, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "05",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"observations": [
+		{
+		"date": {
+		"pretty": "12:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "00",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "5:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "05",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-4.0", "tempi":"24.8","dewptm":"-10.0", "dewpti":"14.0","hum":"64","wspdm":"29.6", "wspdi":"18.4","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"230","wdire":"SW","vism":"24.1", "visi":"15.0","pressurem":"1018.1", "pressurei":"30.07","windchillm":"-11.6", "windchilli":"11.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 050500Z 23016KT 15SM -SN BKN057 OVC085 M04/M10 A3005 RMK SC6AC2 VRY LGT SN SLP181" },
+		{
+		"date": {
+		"pretty": "1:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "01",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "06",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5", "tempi":"24","dewptm":"-10", "dewpti":"14","hum":"53","wspdm":"25.9", "wspdi":"16.1","wgustm":"", "wgusti":"","wdird":"240","wdire":"WSW","vism":"24", "visi":"15","pressurem":"1018", "pressurei":"30.05","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05064 71627 11574 82414 11047 21101 30130 40175 57014 69901 77172 885// 333 11034 21132 43006 79999 90921 93100 555 10001 20001 32725 40201" },
+		{
+		"date": {
+		"pretty": "1:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "01",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "06",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5.0", "tempi":"23.0","dewptm":"-10.0", "dewpti":"14.0","hum":"68","wspdm":"25.9", "wspdi":"16.1","wgustm":"37.0", "wgusti":"23.0","wdird":"240","wdire":"WSW","vism":"24.1", "visi":"15.0","pressurem":"1017.5", "pressurei":"30.05","windchillm":"-12.4", "windchilli":"9.6","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 050600Z 24014G20KT 15SM -SN BKN030 OVC050 M05/M10 A3004 RMK SC5SC3 SLP175" },
+		{
+		"date": {
+		"pretty": "2:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "02",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "7:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "07",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5.0", "tempi":"23.0","dewptm":"-10.0", "dewpti":"14.0","hum":"68","wspdm":"20.4", "wspdi":"12.7","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"210","wdire":"SSW","vism":"24.1", "visi":"15.0","pressurem":"1016.8", "pressurei":"30.03","windchillm":"-11.6", "windchilli":"11.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 050700Z 21011KT 15SM -SN BKN048 OVC100 M05/M10 A3002 RMK SC5AC3 SLP168" },
+		{
+		"date": {
+		"pretty": "3:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "03",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "8:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "08",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5.0", "tempi":"23.0","dewptm":"-10.0", "dewpti":"14.0","hum":"68","wspdm":"24.1", "wspdi":"15.0","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"210","wdire":"SSW","vism":"24.1", "visi":"15.0","pressurem":"1016.0", "pressurei":"30.01","windchillm":"-12.2", "windchilli":"10.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 050800Z 21013KT 15SM SCT033 BKN050 OVC100 M05/M10 A2999 RMK SC4SC2AC2 SLP160" },
+		{
+		"date": {
+		"pretty": "4:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "04",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "09",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5", "tempi":"23","dewptm":"-9", "dewpti":"15","hum":"62","wspdm":"14.8", "wspdi":"9.2","wgustm":"", "wgusti":"","wdird":"190","wdire":"South","vism":"24", "visi":"15","pressurem":"1015", "pressurei":"29.98","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05094 71627 42874 81908 11048 21093 30106 40151 57024 333 6///7" },
+		{
+		"date": {
+		"pretty": "4:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "04",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "09",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5.0", "tempi":"23.0","dewptm":"-9.0", "dewpti":"15.8","hum":"74","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"190","wdire":"South","vism":"24.1", "visi":"15.0","pressurem":"1015.1", "pressurei":"29.98","windchillm":"-10.5", "windchilli":"13.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 050900Z 19008KT 15SM BKN080 OVC110 M05/M09 A2997 RMK AC6AC2 SLP151" },
+		{
+		"date": {
+		"pretty": "5:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "05",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "10:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "10",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5.0", "tempi":"23.0","dewptm":"-9.0", "dewpti":"15.8","hum":"74","wspdm":"18.5", "wspdi":"11.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"160","wdire":"SSE","vism":"24.1", "visi":"15.0","pressurem":"1013.8", "pressurei":"29.94","windchillm":"-11.3", "windchilli":"11.7","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051000Z 16010KT 15SM BKN060 OVC080 M05/M09 A2993 RMK SC5AC3 SLP138" },
+		{
+		"date": {
+		"pretty": "5:10 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "05",
+		"min": "10",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "10:10 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "10",
+		"min": "10",
+		"tzname": "UTC"
+		},
+		"tempm":"-5.0", "tempi":"23.0","dewptm":"-9.0", "dewpti":"15.8","hum":"74","wspdm":"16.7", "wspdi":"10.4","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"150","wdire":"SSE","vism":"24.1", "visi":"15.0","pressurem":"1013.6", "pressurei":"29.94","windchillm":"-10.9", "windchilli":"12.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 051010Z 15009KT 15SM -SN BKN060 OVC080 M05/M09 A2992 RMK SC7AC1 SLP136" },
+		{
+		"date": {
+		"pretty": "6:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "06",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "11:00 AM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "11",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-5.0", "tempi":"23.0","dewptm":"-9.0", "dewpti":"15.8","hum":"74","wspdm":"13.0", "wspdi":"8.1","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"160","wdire":"SSE","vism":"24.1", "visi":"15.0","pressurem":"1013.0", "pressurei":"29.92","windchillm":"-10.1", "windchilli":"13.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051100Z 16007KT 15SM -SN BKN060 OVC080 M05/M09 A2990 RMK SC6AC2 SLP130" },
+		{
+		"date": {
+		"pretty": "7:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "07",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "12:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "12",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-4", "tempi":"24","dewptm":"-9", "dewpti":"16","hum":"60","wspdm":"16.7", "wspdi":"10.4","wgustm":"", "wgusti":"","wdird":"160","wdire":"SSE","vism":"24", "visi":"15","pressurem":"1012", "pressurei":"29.88","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05124 71627 11774 81609 11045 21090 30072 40117 57034 69901 72272 8457/ 333 11034 21055 43006 79999 90927 93100" },
+		{
+		"date": {
+		"pretty": "7:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "07",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "12:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "12",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-4.0", "tempi":"24.8","dewptm":"-9.0", "dewpti":"15.8","hum":"69","wspdm":"18.5", "wspdi":"11.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"160","wdire":"SSE","vism":"24.1", "visi":"15.0","pressurem":"1011.7", "pressurei":"29.88","windchillm":"-10.0", "windchilli":"14.0","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051200Z 16010KT 15SM SCT050 BKN070 OVC140 M04/M09 A2986 RMK SC4AC3AC1 SLP117" },
+		{
+		"date": {
+		"pretty": "8:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "08",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "1:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "13",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-4.0", "tempi":"24.8","dewptm":"-10.0", "dewpti":"14.0","hum":"64","wspdm":"18.5", "wspdi":"11.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"170","wdire":"South","vism":"24.1", "visi":"15.0","pressurem":"1010.8", "pressurei":"29.85","windchillm":"-10.0", "windchilli":"14.0","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Mostly Cloudy","icon":"mostlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051300Z 17010KT 15SM FEW060 BKN130 BKN160 M04/M10 A2984 RMK SC1AC5AC1 SLP108" },
+		{
+		"date": {
+		"pretty": "9:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "09",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "2:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "14",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-3.0", "tempi":"26.6","dewptm":"-11.0", "dewpti":"12.2","hum":"55","wspdm":"18.5", "wspdi":"11.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"170","wdire":"South","vism":"24.1", "visi":"15.0","pressurem":"1009.7", "pressurei":"29.82","windchillm":"-8.8", "windchilli":"16.2","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051400Z 17010KT 15SM BKN062 BKN090 OVC130 M03/M11 A2981 RMK SC5AC2AC1 SLP097" },
+		{
+		"date": {
+		"pretty": "10:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "10",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "15",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-2", "tempi":"29","dewptm":"-12", "dewpti":"11","hum":"33","wspdm":"20.4", "wspdi":"12.7","wgustm":"", "wgusti":"","wdird":"180","wdire":"South","vism":"24", "visi":"15","pressurem":"1009", "pressurei":"29.79","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05154 71627 42774 81811 11019 21115 30041 40086 58031 333 6///7" },
+		{
+		"date": {
+		"pretty": "10:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "10",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "15",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-2.0", "tempi":"28.4","dewptm":"-12.0", "dewpti":"10.4","hum":"47","wspdm":"20.4", "wspdi":"12.7","wgustm":"33.3", "wgusti":"20.7","wdird":"180","wdire":"South","vism":"24.1", "visi":"15.0","pressurem":"1008.5", "pressurei":"29.78","windchillm":"-7.8", "windchilli":"18.0","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051500Z 18011G18KT 15SM FEW060 SCT080 OVC220 M02/M12 A2977 RMK SC1AS3CS4 SLP085" },
+		{
+		"date": {
+		"pretty": "11:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "11",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "4:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "16",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-11.0", "dewpti":"12.2","hum":"47","wspdm":"18.5", "wspdi":"11.5","wgustm":"29.6", "wgusti":"18.4","wdird":"190","wdire":"South","vism":"24.1", "visi":"15.0","pressurem":"1007.0", "pressurei":"29.74","windchillm":"-6.2", "windchilli":"20.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051600Z 19010G16KT 15SM FEW040 OVC060 M01/M11 A2973 RMK SC1SC8 SC TR PRESFR SLP070" },
+		{
+		"date": {
+		"pretty": "11:48 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "11",
+		"min": "48",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "4:48 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "16",
+		"min": "48",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-9.0", "dewpti":"15.8","hum":"55","wspdm":"31.5", "wspdi":"19.6","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"220","wdire":"SW","vism":"16.1", "visi":"10.0","pressurem":"1006.0", "pressurei":"29.71","windchillm":"-7.9", "windchilli":"17.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 051648Z 22017KT 10SM -SN FEW030 OVC040 M01/M09 A2970 RMK SC1SC8 SC TR SLP060" },
+		{
+		"date": {
+		"pretty": "12:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "12",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "5:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "17",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-9.0", "dewpti":"15.8","hum":"55","wspdm":"25.9", "wspdi":"16.1","wgustm":"37.0", "wgusti":"23.0","wdird":"230","wdire":"SW","vism":"48.3", "visi":"30.0","pressurem":"1005.8", "pressurei":"29.70","windchillm":"-7.3", "windchilli":"18.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051700Z 23014G20KT 30SM FEW030 OVC050 M01/M09 A2969 RMK SC1SC7 SLP058" },
+		{
+		"date": {
+		"pretty": "1:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "13",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "18",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-0", "tempi":"31","dewptm":"-9", "dewpti":"16","hum":"40","wspdm":"33.3", "wspdi":"20.7","wgustm":"", "wgusti":"","wdird":"220","wdire":"SW","vism":"24", "visi":"15","pressurem":"1005", "pressurei":"29.67","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"Partly Cloudy","icon":"partlycloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05184 71627 11574 82218 11005 21090 30001 40046 57040 69901 70272 885// 333 11005 21055 43006 79999 90920 93100" },
+		{
+		"date": {
+		"pretty": "1:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "13",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "18",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"0.0", "tempi":"32.0","dewptm":"-9.0", "dewpti":"15.8","hum":"51","wspdm":"42.6", "wspdi":"26.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"230","wdire":"SW","vism":"24.1", "visi":"15.0","pressurem":"1004.5", "pressurei":"29.67","windchillm":"-7.6", "windchilli":"18.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051800Z 23023KT 15SM FEW030 OVC038 M00/M09 A2965 RMK SC1SC7 SLP045" },
+		{
+		"date": {
+		"pretty": "1:22 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "13",
+		"min": "22",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:22 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "18",
+		"min": "22",
+		"tzname": "UTC"
+		},
+		"tempm":"0.0", "tempi":"32.0","dewptm":"-8.0", "dewpti":"17.6","hum":"55","wspdm":"27.8", "wspdi":"17.3","wgustm":"37.0", "wgusti":"23.0","wdird":"220","wdire":"SW","vism":"19.3", "visi":"12.0","pressurem":"1004.2", "pressurei":"29.66","windchillm":"-6.2", "windchilli":"20.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 051822Z 22015G20KT 12SM -SN SCT030 OVC040 M00/M08 A2965 RMK SC4SC4 SLP042" },
+		{
+		"date": {
+		"pretty": "2:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "14",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "7:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "19",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"0.0", "tempi":"32.0","dewptm":"-7.0", "dewpti":"19.4","hum":"60","wspdm":"40.7", "wspdi":"25.3","wgustm":"55.6", "wgusti":"34.5","wdird":"230","wdire":"SW","vism":"19.3", "visi":"12.0","pressurem":"1003.5", "pressurei":"29.64","windchillm":"-7.4", "windchilli":"18.6","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 051900Z 23022G30KT 12SM -SN SCT030 OVC045 M00/M07 A2962 RMK SC3SC5 -SN INTMT SLP035" },
+		{
+		"date": {
+		"pretty": "3:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "15",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "8:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "20",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-5.0", "dewpti":"23.0","hum":"75","wspdm":"35.2", "wspdi":"21.9","wgustm":"50.0", "wgusti":"31.1","wdird":"230","wdire":"SW","vism":"4.8", "visi":"3.0","pressurem":"1003.4", "pressurei":"29.63","windchillm":"-8.3", "windchilli":"17.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 052000Z 23019G27KT 3SM -SN BKN025 OVC040 M01/M05 A2962 RMK SC5SC3 SLP034" },
+		{
+		"date": {
+		"pretty": "3:10 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "15",
+		"min": "10",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "8:10 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "20",
+		"min": "10",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-4.0", "dewpti":"24.8","hum":"80","wspdm":"31.5", "wspdi":"19.6","wgustm":"42.6", "wgusti":"26.5","wdird":"230","wdire":"SW","vism":"2.8", "visi":"1.8","pressurem":"1003.4", "pressurei":"29.63","windchillm":"-7.9", "windchilli":"17.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 052010Z 23017G23KT 1 3/4SM -SN DRSN BKN017 OVC030 M01/M04 A2962 RMK SF5SC3 SLP034" },
+		{
+		"date": {
+		"pretty": "3:43 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "15",
+		"min": "43",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "8:43 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "20",
+		"min": "43",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"33.3", "wspdi":"20.7","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"220","wdire":"SW","vism":"3.6", "visi":"2.2","pressurem":"1003.2", "pressurei":"29.63","windchillm":"-8.1", "windchilli":"17.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 052043Z 22018KT 2 1/4SM -SN DRSN BKN013 OVC030 M01/M03 A2962 RMK SF6SC2 SLP032" },
+		{
+		"date": {
+		"pretty": "4:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "16",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "21",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1", "tempi":"30","dewptm":"-3", "dewpti":"26","hum":"81","wspdm":"27.8", "wspdi":"17.3","wgustm":"", "wgusti":"","wdird":"220","wdire":"SW","vism":"2.8", "visi":"2","pressurem":"1003", "pressurei":"29.63","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"Overcast","icon":"cloudy","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05214 71627 42428 82215 11012 21031 39987 40032 56014 333 6///7" },
+		{
+		"date": {
+		"pretty": "4:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "16",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "21",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"25.9", "wspdi":"16.1","wgustm":"37.0", "wgusti":"23.0","wdird":"220","wdire":"SW","vism":"2.8", "visi":"1.8","pressurem":"1003.1", "pressurei":"29.62","windchillm":"-7.3", "windchilli":"18.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 052100Z 22014G20KT 1 3/4SM -SN DRSN BKN012 OVC025 M01/M03 A2961 RMK SF6SC2 SLP031" },
+		{
+		"date": {
+		"pretty": "4:28 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "16",
+		"min": "28",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:28 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "21",
+		"min": "28",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"27.8", "wspdi":"17.3","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"220","wdire":"SW","vism":"4.8", "visi":"3.0","pressurem":"1003.1", "pressurei":"29.62","windchillm":"-7.5", "windchilli":"18.5","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 052128Z 22015KT 3SM -SN DRSN BKN012 OVC025 M01/M03 A2961 RMK SF6SC2 SLP031" },
+		{
+		"date": {
+		"pretty": "4:46 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "16",
+		"min": "46",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:46 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "21",
+		"min": "46",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"27.8", "wspdi":"17.3","wgustm":"37.0", "wgusti":"23.0","wdird":"220","wdire":"SW","vism":"3.2", "visi":"2.0","pressurem":"1003.0", "pressurei":"29.62","windchillm":"-7.5", "windchilli":"18.5","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 052146Z 22015G20KT 2SM -SN DRSN BKN014 OVC032 M01/M03 A2961 RMK SF6SC2 SLP030" },
+		{
+		"date": {
+		"pretty": "5:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "17",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "10:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "22",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"25.9", "wspdi":"16.1","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"220","wdire":"SW","vism":"4.0", "visi":"2.5","pressurem":"1003.1", "pressurei":"29.62","windchillm":"-7.3", "windchilli":"18.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 052200Z 22014KT 2 1/2SM -SN DRSN BKN012 OVC030 M01/M03 A2961 RMK SF6SC2 SLP031" },
+		{
+		"date": {
+		"pretty": "5:38 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "17",
+		"min": "38",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "10:38 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "22",
+		"min": "38",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"31.5", "wspdi":"19.6","wgustm":"42.6", "wgusti":"26.5","wdird":"220","wdire":"SW","vism":"6.4", "visi":"4.0","pressurem":"1003.2", "pressurei":"29.63","windchillm":"-7.9", "windchilli":"17.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 052238Z 22017G23KT 4SM -SN DRSN FEW011 SCT022 OVC085 M01/M03 A2962 RMK SF1SC3AC4 SLP032" },
+		{
+		"date": {
+		"pretty": "6:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "18",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "11:00 PM GMT on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "23",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"33.3", "wspdi":"20.7","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"230","wdire":"SW","vism":"6.4", "visi":"4.0","pressurem":"1003.4", "pressurei":"29.63","windchillm":"-8.1", "windchilli":"17.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 052300Z 23018KT 4SM -SN DRSN BKN013 OVC021 M01/M03 A2962 RMK SF5SC3 SLP034" },
+		{
+		"date": {
+		"pretty": "7:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "19",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "12:00 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "00",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1", "tempi":"31","dewptm":"-3", "dewpti":"27","hum":"77","wspdm":"27.8", "wspdi":"17.3","wgustm":"", "wgusti":"","wdird":"230","wdire":"SW","vism":"11", "visi":"7","pressurem":"1004", "pressurei":"29.64","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 06004 71627 11461 82315 11008 21030 39990 40035 53003 69921 77172 8657/ 333 11004 21055 43006 70002 90962 93100" },
+		{
+		"date": {
+		"pretty": "7:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "19",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "12:00 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "00",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"25.9", "wspdi":"16.1","wgustm":"37.0", "wgusti":"23.0","wdird":"230","wdire":"SW","vism":"11.3", "visi":"7.0","pressurem":"1003.4", "pressurei":"29.63","windchillm":"-7.3", "windchilli":"18.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 060000Z 23014G20KT 7SM -SN FEW011 BKN032 OVC080 M01/M03 A2962 RMK SF2SC4AC2 SLP034" },
+		{
+		"date": {
+		"pretty": "8:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "20",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "1:00 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "01",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"0.0", "tempi":"32.0","dewptm":"-3.0", "dewpti":"26.6","hum":"80","wspdm":"35.2", "wspdi":"21.9","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"250","wdire":"WSW","vism":"12.9", "visi":"8.0","pressurem":"1003.7", "pressurei":"29.64","windchillm":"-7.0", "windchilli":"19.5","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 060100Z 25019KT 8SM -SN FEW013 SCT022 BKN070 M00/M03 A2963 RMK SF1SC2AC4 VIS W 4SN SLP037" },
+		{
+		"date": {
+		"pretty": "8:22 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "20",
+		"min": "22",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "1:22 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "01",
+		"min": "22",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"35.2", "wspdi":"21.9","wgustm":"46.3", "wgusti":"28.8","wdird":"250","wdire":"WSW","vism":"2.4", "visi":"1.5","pressurem":"1003.9", "pressurei":"29.65","windchillm":"-8.3", "windchilli":"17.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 060122Z 25019G25KT 1 1/2SM -SN DRSN BKN012 OVC030 M01/M03 A2964 RMK SF6SC2 SLP039" },
+		{
+		"date": {
+		"pretty": "8:28 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "20",
+		"min": "28",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "1:28 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "01",
+		"min": "28",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-3.0", "dewpti":"26.6","hum":"86","wspdm":"42.6", "wspdi":"26.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"250","wdire":"WSW","vism":"0.4", "visi":"0.2","pressurem":"1004.1", "pressurei":"29.65","windchillm":"-8.9", "windchilli":"15.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 060128Z 25023KT 1/4SM SN BLSN VV003 M01/M03 A2964 RMK SN8 SLP041" },
+		{
+		"date": {
+		"pretty": "8:36 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "20",
+		"min": "36",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "1:36 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "01",
+		"min": "36",
+		"tzname": "UTC"
+		},
+		"tempm":"-2.0", "tempi":"28.4","dewptm":"-3.0", "dewpti":"26.6","hum":"93","wspdm":"37.0", "wspdi":"23.0","wgustm":"53.7", "wgusti":"33.4","wdird":"260","wdire":"West","vism":"8.0", "visi":"5.0","pressurem":"1004.0", "pressurei":"29.65","windchillm":"-9.8", "windchilli":"14.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 060136Z 26020G29KT 5SM -SN DRSN FEW010 SCT040 BKN080 M02/M03 A2964 RMK SF1SC3AC4 SF TR VIS E-SE 2 SLP040" },
+		{
+		"date": {
+		"pretty": "9:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "21",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "2:00 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "02",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-1.0", "tempi":"30.2","dewptm":"-4.0", "dewpti":"24.8","hum":"80","wspdm":"37.0", "wspdi":"23.0","wgustm":"48.2", "wgusti":"29.9","wdird":"260","wdire":"West","vism":"12.9", "visi":"8.0","pressurem":"1004.2", "pressurei":"29.66","windchillm":"-8.4", "windchilli":"16.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Low Drifting Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 060200Z 26020G26KT 8SM DRSN VCSH FEW010 BKN043 BKN085 M01/M04 A2965 RMK SF1SC5AC1 SF TR SLP042" },
+		{
+		"date": {
+		"pretty": "10:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "22",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "03",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-2", "tempi":"29","dewptm":"-6", "dewpti":"21","hum":"61","wspdm":"33.3", "wspdi":"20.7","wgustm":"", "wgusti":"","wdird":"270","wdire":"West","vism":"16", "visi":"10","pressurem":"1006", "pressurei":"29.70","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 06034 71627 42466 62718 11018 21062 30013 40058 52023 333 6///7" },
+		{
+		"date": {
+		"pretty": "10:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "22",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "03",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-2.0", "tempi":"28.4","dewptm":"-6.0", "dewpti":"21.2","hum":"74","wspdm":"35.2", "wspdi":"21.9","wgustm":"48.2", "wgusti":"29.9","wdird":"280","wdire":"West","vism":"16.1", "visi":"10.0","pressurem":"1005.7", "pressurei":"29.70","windchillm":"-9.6", "windchilli":"14.7","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Low Drifting Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 060300Z 28019G26KT 10SM DRSN FEW017 SCT060 BKN100 M02/M06 A2969 RMK SF1SC3AC3 SF TR PRESRR SLP057" },
+		{
+		"date": {
+		"pretty": "10:14 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "22",
+		"min": "14",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:14 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "03",
+		"min": "14",
+		"tzname": "UTC"
+		},
+		"tempm":"-2.0", "tempi":"28.4","dewptm":"-7.0", "dewpti":"19.4","hum":"69","wspdm":"35.2", "wspdi":"21.9","wgustm":"55.6", "wgusti":"34.5","wdird":"290","wdire":"WNW","vism":"9.7", "visi":"6.0","pressurem":"1006.2", "pressurei":"29.72","windchillm":"-9.6", "windchilli":"14.7","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Light Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 060314Z 29019G30KT 6SM -SN DRSN FEW015 SCT034 BKN050 BKN100 M02/M07 A2970 RMK SF1SC3SC2AC2 SF TR PRESRR SLP062" },
+		{
+		"date": {
+		"pretty": "10:35 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "22",
+		"min": "35",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:35 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "03",
+		"min": "35",
+		"tzname": "UTC"
+		},
+		"tempm":"-2.0", "tempi":"28.4","dewptm":"-8.0", "dewpti":"17.6","hum":"64","wspdm":"31.5", "wspdi":"19.6","wgustm":"48.2", "wgusti":"29.9","wdird":"280","wdire":"West","vism":"19.3", "visi":"12.0","pressurem":"1007.1", "pressurei":"29.74","windchillm":"-9.2", "windchilli":"15.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Low Drifting Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"SPECI CYUL 060335Z 28017G26KT 12SM DRSN FEW018 FEW050 FEW080 FEW110 M02/M08 A2973 RMK SF1SC1AC1AC1 SF TR AC TR PRESRR SLP071" },
+		{
+		"date": {
+		"pretty": "11:00 PM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "23",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "4:00 AM GMT on February 06, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "06",
+		"hour": "04",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-3.0", "tempi":"26.6","dewptm":"-8.0", "dewpti":"17.6","hum":"69","wspdm":"27.8", "wspdi":"17.3","wgustm":"40.7", "wgusti":"25.3","wdird":"300","wdire":"WNW","vism":"19.3", "visi":"12.0","pressurem":"1007.6", "pressurei":"29.76","windchillm":"-10.1", "windchilli":"13.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Low Drifting Snow","icon":"snow","fog":"0","rain":"0","snow":"1","hail":"0","thunder":"0","tornado":"0","metar":"METAR CYUL 060400Z 30015G22KT 12SM DRSN FEW025 FEW045 FEW100 M03/M08 A2975 RMK SC1SC1AC1 AC TR PRESRR SLP076" }
+		],
+		"dailysummary": [
+		{ "date": {
+		"pretty": "12:00 AM EST on February 05, 2017",
+		"year": "2017",
+		"mon": "02",
+		"mday": "05",
+		"hour": "00",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"fog":"0","rain":"0","snow":"1","snowfallm":"", "snowfalli":"","monthtodatesnowfallm":"", "monthtodatesnowfalli":"","since1julsnowfallm":"", "since1julsnowfalli":"","snowdepthm":"", "snowdepthi":"","hail":"0","thunder":"0","tornado":"0","meantempm":"-2", "meantempi":"27","meandewptm":"-7", "meandewpti":"20","meanpressurem":"1007.70", "meanpressurei":"29.76","meanwindspdm":"24", "meanwindspdi":"15","meanwdire":"SW","meanwdird":"222","meanvism":"15.7", "meanvisi":"9.8","humidity":"70","maxtempm":"0", "maxtempi":"32","mintempm":"-5", "mintempi":"22","maxhumidity":"93","minhumidity":"33","maxdewptm":"-3", "maxdewpti":"27","mindewptm":"-12", "mindewpti":"10","maxpressurem":"1018", "maxpressurei":"30.07","minpressurem":"1003", "minpressurei":"29.62","maxwspdm":"43", "maxwspdi":"26","minwspdm":"13", "minwspdi":"8","maxvism":"24.1", "maxvisi":"15.0","minvism":"0.4", "minvisi":"0.2","gdegreedays":"0","heatingdegreedays":"38","coolingdegreedays":"0","precipm":"0.2", "precipi":"0.01","precipsource":"Precip6GroupSynop","heatingdegreedaysnormal":"","monthtodateheatingdegreedays":"","monthtodateheatingdegreedaysnormal":"","since1sepheatingdegreedays":"","since1sepheatingdegreedaysnormal":"","since1julheatingdegreedays":"","since1julheatingdegreedaysnormal":"","coolingdegreedaysnormal":"","monthtodatecoolingdegreedays":"","monthtodatecoolingdegreedaysnormal":"","since1sepcoolingdegreedays":"","since1sepcoolingdegreedaysnormal":"","since1jancoolingdegreedays":"","since1jancoolingdegreedaysnormal":"" }
+		]
+	}
+}

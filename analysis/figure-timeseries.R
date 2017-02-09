@@ -1,9 +1,11 @@
 works_with_R("3.2.3",
              gistr="0.3.6",
-             data.table="1.9.7",
-             "hadley/scales@2c3edf45de56d617444dc38e47e0404173817886",
-             "tdhock/ggplot2@a8b06ddb680acdcdbd927773b1011c562134e4d2",
-             "tdhock/animint@6b1c9e588b03f632cd39cdec9bbcfa730db9e889")
+             "faizan-khan-iit/ggplot2@5fb99d0cece13239bbbc09c6b8a7da7f86ac58e2",
+             "tdhock/animint@c0db9f34c525bec35c797ccdf8be9564b67c578c",
+             ## "hadley/scales@2c3edf45de56d617444dc38e47e0404173817886",
+             ## "tdhock/ggplot2@a8b06ddb680acdcdbd927773b1011c562134e4d2",
+             ## "tdhock/animint@6b1c9e588b03f632cd39cdec9bbcfa730db9e889",
+             data.table="1.9.7")
 
 load("temperature.RData")
 
