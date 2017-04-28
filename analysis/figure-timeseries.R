@@ -65,6 +65,10 @@ work.labels <- data.table(
 
 outside.hlines <- data.table(degreesC=0, location="outside")
 
+extremes <- temperature[, {
+  .SD[degrees.C %in% range(degrees.C)]
+}, by=list(day)]
+
 viz <- list(
   title=list("Temperature in Bioinformatics office and outside in Montreal"),
   days=ggplot()+
@@ -193,6 +197,11 @@ viz <- list(
               size=4,
               alpha=0.75,
               data=data.table(temperature, location="inside"))+
+    geom_text(aes(hours.after.midnight, degrees.C,
+                  showSelected=day,
+                  label=sprintf("%.1f", degrees.C),
+                  clickSelects=day),
+              data=data.table(extremes, location="inside"))+
     ## Outside:
     geom_text(aes(hour.num, degrees.C,
                   showSelected2=data.type,
