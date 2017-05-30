@@ -80,7 +80,7 @@ viz <- list(
     theme_animint(width=1000)+
     theme(panel.margin=grid::unit(0, "lines"))+
     facet_grid(location ~ ., scales="free")+
-    xlab("day")+
+    scale_x_datetime("day", date_breaks="3 months", date_labels="%b %Y")+
     ylab("temperature (degrees C)")+
     geom_hline(aes(yintercept=degreesC), data=outside.hlines, color="grey")+
     geom_widerect(aes(ymin=min.C, ymax=max.C, fill=data.type),
