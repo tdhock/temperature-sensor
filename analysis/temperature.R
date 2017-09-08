@@ -79,13 +79,26 @@ for(date.str in names(missing.vec)){
   json.url <- sprintf(
     "http://api.wunderground.com/api/%s/history_%s/q/Canada/Montreal.json",
     wunderground.key, date.str)
-  download.file(json.url, json.path)
-  Sys.sleep(6) ## There is a limit of 10 calls per minute.
+  is.valid.json <- function(){
+    tryCatch({
+      json.list <- fromJSON(json.path)
+      TRUE
+    }, error=function(e){
+      system(paste("cat", json.path))
+      FALSE
+    })
+  }
+  while(!is.valid.json()){
+    download.file(json.url, json.path)
+    Sys.sleep(6) ## There is a limit of 10 calls per minute.
+  }
 }
 
 json.file.vec <- Sys.glob(file.path("history", "*.json"))
 outside.list <- list()
-for(json.file in json.file.vec){
+for(json.file.i in seq_along(json.file.vec)){
+  json.file <- json.file.vec[[json.file.i]]
+  cat(sprintf("%4d / %4d %s\n", json.file.i, length(json.file.vec), json.file))
   L <- fromJSON(json.file)
   date.mat <- sapply(L$history$observations, "[[", "date")
   date.dt <- data.table(t(date.mat))
