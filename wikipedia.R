@@ -57,8 +57,9 @@ for(city in names(url.vec)){
     is.na(row.name.mat[, "varname"]),
     row.name.vec,
     row.name.mat[, "varname"])
+  month.vec <- col.name.vec[col.indices]
   wide.dt <- data.table(
-    month=factor(col.name.vec[col.indices], col.name.vec[col.indices]),
+    month=factor(month.vec, month.vec),
     t(matrix(
       to.numeric(chr.mat), nrow(chr.mat), ncol(chr.mat),  
       dimnames=list(new.row.names))))
