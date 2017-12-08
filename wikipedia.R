@@ -16,24 +16,26 @@ to.numeric <- function(chr.vec){
   as.numeric(gsub(",", "", gsub("−", "-", chr.vec)))
 }
 url.vec <- c(
-  Tustin="https://en.wikipedia.org/wiki/Tustin,_California",
-  Berkeley="https://en.wikipedia.org/wiki/Berkeley,_California",
-  Santa_Cruz="https://en.wikipedia.org/wiki/Santa_Cruz,_California",
-  Paris="https://en.wikipedia.org/wiki/Paris",
+  ##Tustin="https://en.wikipedia.org/wiki/Tustin,_California",
+  ##Havasu="https://en.wikipedia.org/wiki/Lake_Havasu_City,_Arizona",
+  ##Berkeley="https://en.wikipedia.org/wiki/Berkeley,_California",
+  ##Santa_Cruz="https://en.wikipedia.org/wiki/Santa_Cruz,_California",
+  ##Brisbane="https://en.wikipedia.org/wiki/Brisbane",
+  ##Paris="https://en.wikipedia.org/wiki/Paris",
  ##  Tokyo="https://en.wikipedia.org/wiki/Tokyo",
  ##  Singapore="https://en.wikipedia.org/wiki/Singapore",
-    Hangzhou="https://en.wikipedia.org/wiki/Hangzhou",
-    Tehran="https://en.wikipedia.org/wiki/Tehran",
-  ##Kuwait="https://en.wikipedia.org/wiki/Kuwait_City",#TODO debug
+  ##Hangzhou="https://en.wikipedia.org/wiki/Hangzhou",
+    ##Tehran="https://en.wikipedia.org/wiki/Tehran",
+  ##Kuwait="https://en.wikipedia.org/wiki/Kuwait_City",
  ##  Calgary="https://en.wikipedia.org/wiki/Calgary",
- ## Flagstaff="https://en.wikipedia.org/wiki/Flagstaff,_Arizona",
- ## Waterloo="https://en.wikipedia.org/wiki/Waterloo,_Ontario",
- ## San_Diego="https://en.wikipedia.org/wiki/San_Diego",
   ## Toronto="https://en.wikipedia.org/wiki/Toronto",
   ## Vancouver="https://en.wikipedia.org/wiki/Vancouver",
-  ##Halifax="https://en.wikipedia.org/wiki/Halifax",#TODO debug.
-  Minneapolis="https://en.wikipedia.org/wiki/Minneapolis",
+  ##Halifax="https://en.wikipedia.org/wiki/Halifax,_Nova_Scotia",
+  ##Minneapolis="https://en.wikipedia.org/wiki/Minneapolis",
   Montreal="https://en.wikipedia.org/wiki/Montreal"
+  ,Flagstaff="https://en.wikipedia.org/wiki/Flagstaff,_Arizona"
+  ,Waterloo="https://en.wikipedia.org/wiki/Waterloo,_Ontario"
+  ,San_Diego="https://en.wikipedia.org/wiki/San_Diego"
   )
 climate.dt.list <- list()
 for(city in names(url.vec)){
@@ -42,7 +44,17 @@ for(city in names(url.vec)){
     u <- url.vec[[city]]
     download.file(u, city.html)
   }
-  df <- htmltab(city.html, which="//th[text()='Month']/ancestor::table")
+  tryCatch({
+    df <- htmltab(city.html, which="//th[text()='Month']/ancestor::table")
+  }, error=function(e){
+    unlink(city.html)
+    browseURL(u)
+    stop(
+      "unable to find climate data in web page ",
+      u, " -- either there is no table with climate data ",
+      "(is that a disambiguation page?), ",
+      " or we need to update the code to parse the unrecognized table")
+  })
   col.name.vec <- sub(".*> ", "", names(df))
   row.indices <- -grep("^Source", df[,1])
   row.name.vec <- df[row.indices, 1]
