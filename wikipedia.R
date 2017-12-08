@@ -3,7 +3,7 @@ works_with_R(
   ggplot2="2.2.1",
   namedCapture="2017.6.1",
   htmltab="0.7.1",
-  "Rdatatable/data.table@3db6e9832e1491cb0e10f8bdcd4348f5c2b1ac8a")
+  data.table="1.10.4")
 
 pattern <- paste0(
   "(?<varname>.*)",
@@ -18,12 +18,22 @@ to.numeric <- function(chr.vec){
 url.vec <- c(
   Tustin="https://en.wikipedia.org/wiki/Tustin,_California",
   Berkeley="https://en.wikipedia.org/wiki/Berkeley,_California",
+  Santa_Cruz="https://en.wikipedia.org/wiki/Santa_Cruz,_California",
   Paris="https://en.wikipedia.org/wiki/Paris",
-  Tokyo="https://en.wikipedia.org/wiki/Tokyo",
+ ##  Tokyo="https://en.wikipedia.org/wiki/Tokyo",
+ ##  Singapore="https://en.wikipedia.org/wiki/Singapore",
+    Hangzhou="https://en.wikipedia.org/wiki/Hangzhou",
+    Tehran="https://en.wikipedia.org/wiki/Tehran",
+  ##Kuwait="https://en.wikipedia.org/wiki/Kuwait_City",#TODO debug
+ ##  Calgary="https://en.wikipedia.org/wiki/Calgary",
+ ## Flagstaff="https://en.wikipedia.org/wiki/Flagstaff,_Arizona",
+ ## Waterloo="https://en.wikipedia.org/wiki/Waterloo,_Ontario",
+ ## San_Diego="https://en.wikipedia.org/wiki/San_Diego",
+  ## Toronto="https://en.wikipedia.org/wiki/Toronto",
+  ## Vancouver="https://en.wikipedia.org/wiki/Vancouver",
+  ##Halifax="https://en.wikipedia.org/wiki/Halifax",#TODO debug.
+  Minneapolis="https://en.wikipedia.org/wiki/Minneapolis",
   Montreal="https://en.wikipedia.org/wiki/Montreal"
-  ## ,Flagstaff="https://en.wikipedia.org/wiki/Flagstaff,_Arizona"
-  ## ,Waterloo="https://en.wikipedia.org/wiki/Waterloo,_Ontario"
-  ## ,San_Diego="https://en.wikipedia.org/wiki/San_Diego"
   )
 climate.dt.list <- list()
 for(city in names(url.vec)){
