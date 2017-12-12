@@ -10,7 +10,7 @@ pattern <- paste0(
   " ",
   "(?<before>[^ (]+)",
   " [(]",
-  "(?<inside>[^)]+)",
+  "(?<inside>[^)%]+)",
   "[)]")
 to.numeric <- function(chr.vec){
   as.numeric(gsub(",", "", gsub("−", "-", chr.vec)))
@@ -21,24 +21,27 @@ abbrev.vec <- c(
   Berkeley="Berkeley,_California",
   "Paris",
   "Tokyo",
-  ##"Sherbrooke",
+  ## "Sherbrooke",
   ## SherbrookeFR="https://fr.wikipedia.org/wiki/Sherbrooke",
   ## Santa_Cruz="Santa_Cruz,_California",
   ## "Brisbane",
   ## "Singapore",
   ## "Hangzhou",
   ## "Tehran",
-  ## Kuwait="Kuwait_City",
+  ##  Kuwait="Kuwait_City",
   ## "Calgary",
   ## "Toronto",
   ## "Vancouver",
   ## Halifax="Halifax,_Nova_Scotia",
   ## "Minneapolis",
   "Montreal"
+ ##,"Tahiti"="Papeete"
+ ##,"Puerto_Rico"
+ ##,"Buenos_Aires"
  ,Flagstaff="Flagstaff,_Arizona"
  ,Waterloo="Waterloo,_Ontario"
  ,"San_Diego"
- ,"Quebec"="https://fr.wikipedia.org/wiki/Québec_(ville)"
+ ##,"Quebec"="https://fr.wikipedia.org/wiki/Québec_(ville)"
 )
 url.vec <- paste0(
   ifelse(
@@ -53,7 +56,6 @@ names(url.vec) <- ifelse(
 month.str <- c(
   "Jan", "Feb", "Mar","Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-month <- factor(month.str, month.str)
 parser.fun.list <- list(en=function(city.html){
   tryCatch({
     df <- htmltab(city.html, which="//th[text()='Month']/ancestor::table")
@@ -89,16 +91,18 @@ parser.fun.list <- list(en=function(city.html){
   new.row.names <- ifelse(
     is.na(row.name.mat[, "varname"]),
     row.name.vec,
-    row.name.mat[, "varname"])
-  wide.dt <- data.table(
-    month,
-    t(matrix(
-      to.numeric(chr.mat), nrow(chr.mat), ncol(chr.mat),  
-      dimnames=list(new.row.names))))
-  melt(wide.dt, id.vars="month")
+    sprintf(
+      "%s (%s)",
+      row.name.mat[, "varname"],
+      row.name.mat[, keep.name]))
+  matrix(
+    to.numeric(chr.mat), nrow(chr.mat), ncol(chr.mat),  
+    dimnames=list(new.row.names))
 }, fr=function(city.html){
   tryCatch({
-    df <- htmltab(city.html, which="//th[text()='Mois']/ancestor::table")
+    df <- htmltab(
+      city.html,
+      which="//th[text()='Mois']/ancestor::table")#for record
   }, error=function(e){
     unlink(city.html)
     browseURL(u)
@@ -108,58 +112,148 @@ parser.fun.list <- list(en=function(city.html){
       "(is that a disambiguation page?), ",
       " or we need to update the code to parse the unrecognized table")
   })
-  row.name.vec <- df[, 1]
-  col.indices <- 2:13
+  raw.mat <- as.matrix(df[, 2:13])
+  rownames(raw.mat) <- df[, 1]
+  extra.year.vec <- c(
+    "Record de froid (°C)date du record",
+    "Record de chaleur (°C)date du record")
+  extra.year.some <- extra.year.vec[extra.year.vec %in% rownames(raw.mat)]
+  raw.mat[extra.year.some,] <- sub(
+    "[0-9]{4}$", "", raw.mat[extra.year.some, ], perl=TRUE)
+  to.rep <- rownames(raw.mat)%in%extra.year.some
+  rownames(raw.mat)[to.rep] <- sub(
+    "date du record$", "",
+    rownames(raw.mat)[to.rep])
   var.trans.vec <- c(
-    "Température minimale moyenne (°C)"="Average low",
-    "Température maximale moyenne (°C)"="Average high")
-  is.found <- names(var.trans.vec) %in% row.name.vec
-  not.found <- names(var.trans.vec)[!is.found]
+    "Température minimale moyenne (°C)"="Average low (°C)",
+    "Température maximale moyenne (°C)"="Average high (°C)",
+    "Température moyenne (°C)"="Average temp (°C)",
+    "Record de froid (°C)"="Record low (°C)",
+    "Record de chaleur (°C)"="Record high (°C)",
+    "Ensoleillement (h)"="Mean monthly sunshine hours",
+    "Précipitations (mm)"="Average precipitation (mm)",
+    "dont pluie (mm)"="Average rainfall (mm)",
+    "dont neige (cm)"="Average snowfall (cm)",
+    "Nombre de jours avec précipitations"="Average precipitation (days)",
+    "dont nombre de jours avec précipitations ≥ 5 mm"="Average ≥5 mm rain (days)")
+  is.found <- rownames(raw.mat) %in% names(var.trans.vec) 
+  not.found <- rownames(raw.mat)[!is.found]
   if(length(not.found)){
+    print(not.found)
     stop(
-      "need variables (",
-      paste(not.found, collapse=", "),
-      ") which are not present in data (",
-      paste(row.name.vec, collapse=", "),
-      ")")
+      "data contains variables that the code does not handle (printed above)")
   }
-  chr.mat <- unname(as.matrix(df[, col.indices]))
-  corrected.mat <- matrix(
-    as.numeric(sub("−", "-", sub(",", ".", chr.mat))),
-    nrow(chr.mat), ncol(chr.mat),  
-    dimnames=list(row.name.vec))[names(var.trans.vec),]
-  rownames(corrected.mat) <- var.trans.vec
-  wide.dt <- data.table(
-    month,
-    t(corrected.mat))
-  melt(wide.dt, id.vars="month")
+  matrix(
+    as.numeric(sub("−", "-", sub(",", ".", raw.mat))),
+    nrow(raw.mat), ncol(raw.mat),  
+    dimnames=list(var.trans.vec[rownames(raw.mat)]))
 })
 climate.dt.list <- list()
 for(city in names(url.vec)){
   city.html <- file.path("wikipedia", paste0(city, ".html"))
   u <- url.vec[[city]]
-  if(!file.exists(city.html)){
-    download.file(u, city.html)
-  }
   language <- sub(".*//", "", sub("[.].*", "", u))
-  parser.fun <- parser.fun.list[[language]]
-  tall.dt <- parser.fun(city.html)
-  climate.dt.list[[city]] <- data.frame(city, tall.dt)
+  city.csv <- file.path("wikipedia", paste0(city, ".csv"))
+  if(file.exists(city.csv)){
+    wide.dt <- fread(city.csv)
+  }else{
+    if(!file.exists(city.html)){
+      download.file(u, city.html)
+    }
+    parser.fun <- parser.fun.list[[language]]
+    climate.mat <- parser.fun(city.html)
+    stopifnot(ncol(climate.mat)==12)
+    wide.dt <- data.table(
+      month=month.str,
+      t(climate.mat))
+    fwrite(wide.dt, city.csv)
+  }
+  wide.dt[, month.fac := factor(month, month.str)]
+  tall.dt <- melt(wide.dt, id.vars=c("month", "month.fac"))
+  climate.dt.list[[city]] <- data.table(
+    city=factor(city, names(url.vec)),
+    tall.dt)
 }
-climate.dt <- data.table(do.call(rbind, climate.dt.list))
-temp.dt <- climate.dt[variable %in% c("Average high", "Average low")]
-temp.wide <- dcast(temp.dt, city + month ~ variable)
+climate.dt <- do.call(rbind, climate.dt.list)
+counts.dt <- dcast(climate.dt, city ~ variable)
+counts.dt[`Average precipitation (mm)`==0 & `Average rainfall (mm)`>0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)]
+(only.prec <- counts.dt[`Average precipitation (mm)`>0 & `Average rainfall (mm)`==0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)])
+counts.dt[`Average precipitation (mm)`>0 & `Average rainfall (mm)`>0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)]#cities in Canada report both rainfall and precipitation.
+climate.dt[city %in% only.prec$city & variable=="Average precipitation (mm)", variable := "Average rainfall (mm)"]
+climate.dt[, list(values=.N), by=variable][order(values)]
+show.vars <- c(
+  "Average high (°C)", "Average low (°C)",
+  "Record high (°C)", "Record low (°C)",
+  "Average rainfall (mm)", "Average snowfall (cm)",
+  "Mean monthly sunshine hours")
+show.dt <- climate.dt[variable %in% show.vars]
+show.wide <- dcast(show.dt, city + month.fac ~ variable)
 breaks.vec <- seq(1, 12, by=2)
+
 ggplot()+
-  geom_ribbon(aes(as.numeric(month), ymax=`Average high`, ymin=`Average low`),
-              alpha=0.5,
-              data=temp.wide)+
+  geom_ribbon(aes(
+    as.numeric(month.fac),
+    fill=what,
+    ymax=`Average high (°C)`,
+    ymin=`Average low (°C)`),
+    alpha=0.5,
+    data=data.table(
+      show.wide,
+      y="temperature (°C)",
+      what="Average daily high/low"))+
+  geom_line(aes(
+    as.numeric(month.fac),
+    `Record high (°C)`,
+    color=what),
+    data=data.table(
+      show.wide,
+      y="temperature (°C)",
+      what="Record high/low"))+
+  geom_line(aes(
+    as.numeric(month.fac),
+    `Record low (°C)`,
+    color=what),
+    data=data.table(
+      show.wide,
+      y="temperature (°C)",
+      what="Record high/low"))+
+  geom_line(aes(
+    as.numeric(month.fac),
+    `Average rainfall (mm)`,
+    color=what),
+    data=data.table(
+      show.wide,
+      y="rainfall (mm)",
+      what="Monthly average"))+
+  geom_line(aes(
+    as.numeric(month.fac),
+    `Average snowfall (cm)`,
+    color=what),
+    data=data.table(
+      show.wide,
+      y="snowfall (cm)",
+      what="Monthly average"))+
+  geom_line(aes(
+    as.numeric(month.fac),
+    `Mean monthly sunshine hours`,
+    color=what),
+    data=data.table(
+      show.wide,
+      y="sunshine (hours)",
+      what="Monthly average"))+
   theme_bw()+
-  theme(panel.margin=grid::unit(0, "lines"))+
-  facet_grid(. ~ city)+
+  theme(
+    panel.margin=grid::unit(0, "lines"),
+    legend.position="bottom")+
+  facet_grid(y ~ city, scales="free")+
+  scale_color_manual("", values=c(
+    "Monthly average"="black",
+    "Record high/low"="grey"))+
+  scale_fill_manual("", values=c(
+    "Average daily high/low"="black"))+
   scale_x_continuous(
     "Month",
     breaks=breaks.vec,
-    labels=levels(temp.wide$month)[breaks.vec])+
+    labels=month.str[breaks.vec])+
   scale_y_continuous(
-    "Average high and low temperatures (degrees Celsius)")
+    "")
