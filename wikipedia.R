@@ -41,6 +41,7 @@ abbrev.vec <- c(
  ,Flagstaff="Flagstaff,_Arizona"
  ,Waterloo="Waterloo,_Ontario"
  ,"San_Diego"
+  ,"Toulouse"
  ##,"Quebec"="https://fr.wikipedia.org/wiki/Québec_(ville)"
 )
 url.vec <- paste0(
@@ -169,7 +170,10 @@ for(city in names(url.vec)){
     fwrite(wide.dt, city.csv)
   }
   wide.dt[, month.fac := factor(month, month.str)]
-  tall.dt <- melt(wide.dt, id.vars=c("month", "month.fac"))
+  tall.dt <- melt(
+    wide.dt,
+    id.vars=c("month", "month.fac"),
+    variable.factor=FALSE)
   climate.dt.list[[city]] <- data.table(
     city=factor(city, names(url.vec)),
     tall.dt)
