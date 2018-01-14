@@ -18,12 +18,30 @@ temp.wide <- dcast(temp.unique, date.str ~ minute.str, value.var="mean.degrees.C
 fwrite(temp.wide, "degreesC.csv")
 
 outlier.list <- list(
-  c("2016-11-18 18:24:00", "2016-11-18 18:46:00"),
-  c("2016-10-19 03:00", "2016-10-19 06:55"))
+  c("2016-11-18_18:24", "2016-11-18_18:46")
+ ,c("2016-10-19_03:00", "2016-10-19_06:55")
+ ,c("2017-09-28_15:01", "2017-09-28_15:01")
+ ,c("2017-09-28_15:45", "2017-09-28_15:52")
+ ,c("2017-10-02_09:00", "2017-10-02_20:00")
+ ,c("2017-10-03_15:00", "2017-10-03_18:00")
+ ,c("2017-10-04_16:40", "2017-10-04_16:46")
+ ,c("2017-10-05_14:18", "2017-10-06_12:57")
+ ,c("2017-10-12_11:00", "2017-10-12_18:00")
+ ,c("2017-10-19_09:00", "2017-10-19_15:00")
+ ,c("2017-10-25_12:00", "2017-10-25_18:00")
+ ,c("2017-10-26_13:57", "2017-10-27_17:44")
+)
 is.outlier <- rep(FALSE, nrow(temp.every.minute))
 for(outlier.vec in outlier.list){
-  lim.vec <- strptime(outlier.vec, "%Y-%m-%d %H:%M")
-  this.outlier <- temp.every.minute[, lim.vec[1] < datetime.POSIXct & datetime.POSIXct < lim.vec[2] ]
+  lim.vec <- strptime(outlier.vec, "%Y-%m-%d_%H:%M")
+  this.outlier <- temp.every.minute[, lim.vec[1] <= datetime.POSIXct & datetime.POSIXct <= lim.vec[2] ]
+  cat(paste(
+    sum(this.outlier),
+    "outliers excluded from",
+    lim.vec[1],
+    "to",
+    lim.vec[2],
+    "\n"))
   is.outlier <- is.outlier | this.outlier
 }
 temperature <- temp.every.minute[!is.outlier, {
@@ -73,24 +91,26 @@ dir.create("history", showWarnings=FALSE)
 file.vec <- file.path("history", paste0(day.vec, ".json"))
 names(file.vec) <- gsub("-", "", day.vec)
 missing.vec <- file.vec[!file.exists(file.vec)]
-for(date.str in names(missing.vec)){
-  json.path <- missing.vec[[date.str]]
-  ## wunderground.key is defined in my ~/.Rprofile
-  json.url <- sprintf(
-    "http://api.wunderground.com/api/%s/history_%s/q/Canada/Montreal.json",
-    wunderground.key, date.str)
-  is.valid.json <- function(){
-    tryCatch({
-      json.list <- fromJSON(json.path)
-      TRUE
-    }, error=function(e){
-      system(paste("cat", json.path))
-      FALSE
-    })
-  }
-  while(!is.valid.json()){
-    download.file(json.url, json.path)
-    Sys.sleep(6) ## There is a limit of 10 calls per minute.
+if("wunderground.key" %in% ls()){
+  for(date.str in names(missing.vec)){
+    json.path <- missing.vec[[date.str]]
+    ## wunderground.key is defined in my ~/.Rprofile
+    json.url <- sprintf(
+      "http://api.wunderground.com/api/%s/history_%s/q/Canada/Montreal.json",
+      wunderground.key, date.str)
+    is.valid.json <- function(){
+      tryCatch({
+        json.list <- fromJSON(json.path)
+        TRUE
+      }, error=function(e){
+        system(paste("cat", json.path))
+        FALSE
+      })
+    }
+    while(!is.valid.json()){
+      download.file(json.url, json.path)
+      Sys.sleep(6) ## There is a limit of 10 calls per minute.
+    }
   }
 }
 
