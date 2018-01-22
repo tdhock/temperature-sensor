@@ -1,0 +1,645 @@
+
+{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "history": 1
+  }
+	}
+		,
+	"history": {
+		"date": {
+		"pretty": "January 4, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "00",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "January 4, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "05",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"observations": [
+		{
+		"date": {
+		"pretty": "12:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "00",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "5:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "05",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10.3", "tempi":"13.5","dewptm":"-12.3", "dewpti":"9.9","hum":"86","wspdm":"1.9", "wspdi":"1.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"210","wdire":"SSW","vism":"-9999.0", "visi":"-9999.0","pressurem":"1017.2", "pressurei":"30.04","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"0.3", "precipi":"0.01","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 040500Z AUTO 21001KT M10/M12 RMK AO1 2PAST HR SOG 41 8010 SLP172 P0001 T11031123 50002" },
+		{
+		"date": {
+		"pretty": "1:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "01",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "06",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-9", "tempi":"16","dewptm":"-12", "dewpti":"10","hum":"69","wspdm":"1.9", "wspdi":"1.2","wgustm":"", "wgusti":"","wdird":"150","wdire":"SSE","vism":"", "visi":"","pressurem":"1017", "pressurei":"30.03","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 04064 71612 17/// /1501 11091 21121 30074 40167 56019 69921 7//4/ 333 11067 21159 70002" },
+		{
+		"date": {
+		"pretty": "1:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "01",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "06",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-9.1", "tempi":"15.6","dewptm":"-12.1", "dewpti":"10.2","hum":"79","wspdm":"1.9", "wspdi":"1.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"150","wdire":"SSE","vism":"-9999.0", "visi":"-9999.0","pressurem":"1016.7", "pressurei":"30.03","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 040600Z AUTO 15001KT M09/M12 RMK AO1 SOG 42 6019 SLP167 T10911121 50002" },
+		{
+		"date": {
+		"pretty": "2:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "02",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "7:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "07",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-8.7", "tempi":"16.3","dewptm":"-13.3", "dewpti":"8.1","hum":"70","wspdm":"3.7", "wspdi":"2.3","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"230","wdire":"SW","vism":"-9999.0", "visi":"-9999.0","pressurem":"1016.8", "pressurei":"30.03","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 040700Z AUTO 23002KT M09/M13 RMK AO1 SOG 42 5011 SLP168 T10871133" },
+		{
+		"date": {
+		"pretty": "4:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "04",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "09",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-11", "tempi":"13","dewptm":"-13", "dewpti":"9","hum":"76","wspdm":"5.6", "wspdi":"3.5","wgustm":"", "wgusti":"","wdird":"10","wdire":"North","vism":"", "visi":"","pressurem":"1016", "pressurei":"30.00","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 04094 71612 26/// /0103 11106 21129 30064 40157 58010 333 60007" },
+		{
+		"date": {
+		"pretty": "4:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "04",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "09",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10.6", "tempi":"12.9","dewptm":"-12.9", "dewpti":"8.8","hum":"84","wspdm":"5.6", "wspdi":"3.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"10","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1015.7", "pressurei":"30.00","windchillm":"-13.9", "windchilli":"6.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 040900Z AUTO 01003KT M11/M13 RMK AO1 SOG 41 8010 SLP157 T11061129" },
+		{
+		"date": {
+		"pretty": "5:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "05",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "10:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "10",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10.6", "tempi":"12.9","dewptm":"-13.1", "dewpti":"8.4","hum":"82","wspdm":"5.6", "wspdi":"3.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"20","wdire":"NNE","vism":"-9999.0", "visi":"-9999.0","pressurem":"1015.0", "pressurei":"29.98","windchillm":"-13.9", "windchilli":"6.9","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041000Z AUTO 02003KT M11/M13 RMK AO1 SOG 41 6018 SLP150 T11061131" },
+		{
+		"date": {
+		"pretty": "6:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "06",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "11:00 AM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "11",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-11.0", "tempi":"12.2","dewptm":"-13.6", "dewpti":"7.5","hum":"82","wspdm":"5.6", "wspdi":"3.5","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"10","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1014.2", "pressurei":"29.95","windchillm":"-14.4", "windchilli":"6.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041100Z AUTO 01003KT M11/M14 RMK AO1 SOG 42 8016 SLP142 T11101136" },
+		{
+		"date": {
+		"pretty": "7:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "07",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "12:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "12",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-12", "tempi":"11","dewptm":"-14", "dewpti":"8","hum":"79","wspdm":"7.4", "wspdi":"4.6","wgustm":"", "wgusti":"","wdird":"20","wdire":"NNE","vism":"", "visi":"","pressurem":"1013", "pressurei":"29.93","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 04124 71612 16/// /0204 11115 21136 30041 40134 58023 60001 333 11067 21125 4/042 70002" },
+		{
+		"date": {
+		"pretty": "7:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "07",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "12:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "12",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10.5", "tempi":"13.1","dewptm":"-13.6", "dewpti":"7.5","hum":"78","wspdm":"7.4", "wspdi":"4.6","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"20","wdire":"NNE","vism":"-9999.0", "visi":"-9999.0","pressurem":"1013.4", "pressurei":"29.93","windchillm":"-14.8", "windchilli":"5.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041200Z AUTO 02004KT M11/M14 RMK AO1 SOG 41 8023 SLP134 T11051136" },
+		{
+		"date": {
+		"pretty": "8:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "08",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "1:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "13",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10.5", "tempi":"13.1","dewptm":"-13.3", "dewpti":"8.1","hum":"80","wspdm":"7.4", "wspdi":"4.6","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"360","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1013.3", "pressurei":"29.93","windchillm":"-14.8", "windchilli":"5.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041300Z AUTO 36004KT M11/M13 RMK AO1 SOG 41 6017 SLP133 T11051133" },
+		{
+		"date": {
+		"pretty": "9:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "09",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "2:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "14",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-11.1", "tempi":"12.0","dewptm":"-13.0", "dewpti":"8.6","hum":"86","wspdm":"9.3", "wspdi":"5.8","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"10","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1011.8", "pressurei":"29.88","windchillm":"-16.3", "windchilli":"2.7","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041400Z AUTO 01005KT M11/M13 RMK AO1 SOG 41 8024 SLP118 T11111130" },
+		{
+		"date": {
+		"pretty": "10:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "10",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "15",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10", "tempi":"13","dewptm":"-13", "dewpti":"9","hum":"77","wspdm":"11.1", "wspdi":"6.9","wgustm":"", "wgusti":"","wdird":"10","wdire":"North","vism":"", "visi":"","pressurem":"1011", "pressurei":"29.85","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 04154 71612 26/// /0106 11105 21128 30013 40106 58028 333 60007" },
+		{
+		"date": {
+		"pretty": "10:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "10",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "15",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10.5", "tempi":"13.1","dewptm":"-12.8", "dewpti":"9.0","hum":"84","wspdm":"11.1", "wspdi":"6.9","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"10","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1010.6", "pressurei":"29.85","windchillm":"-16.2", "windchilli":"2.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041500Z AUTO 01006KT M11/M13 RMK AO1 SOG 42 8028 SLP106 T11051128" },
+		{
+		"date": {
+		"pretty": "11:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "11",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "4:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "16",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-10.0", "tempi":"14.0","dewptm":"-12.6", "dewpti":"9.3","hum":"82","wspdm":"9.3", "wspdi":"5.8","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"10","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1009.9", "pressurei":"29.83","windchillm":"-15.0", "windchilli":"5.1","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041600Z AUTO 01005KT M10/M13 RMK AO1 SOG 42 6034 SLP099 T11001126" },
+		{
+		"date": {
+		"pretty": "12:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "12",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "5:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "17",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-9.4", "tempi":"15.1","dewptm":"-12.4", "dewpti":"9.7","hum":"79","wspdm":"11.1", "wspdi":"6.9","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"10","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1008.5", "pressurei":"29.78","windchillm":"-14.9", "windchilli":"5.2","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041700Z AUTO 01006KT M09/M12 RMK AO1 SOG 40 8032 SLP085 T10941124" },
+		{
+		"date": {
+		"pretty": "1:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "13",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "18",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-8", "tempi":"17","dewptm":"-12", "dewpti":"11","hum":"67","wspdm":"11.1", "wspdi":"6.9","wgustm":"", "wgusti":"","wdird":"20","wdire":"NNE","vism":"", "visi":"","pressurem":"1006", "pressurei":"29.73","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 04184 71612 16/// /0206 11085 21118 39973 40065 58040 60001 333 11085 21125 70002" },
+		{
+		"date": {
+		"pretty": "1:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "13",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "6:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "18",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-8.5", "tempi":"16.7","dewptm":"-11.8", "dewpti":"10.8","hum":"77","wspdm":"11.1", "wspdi":"6.9","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"20","wdire":"NNE","vism":"-9999.0", "visi":"-9999.0","pressurem":"1006.5", "pressurei":"29.73","windchillm":"-13.8", "windchilli":"7.2","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041800Z AUTO 02006KT M09/M12 RMK AO1 PRESFR SOG 39 8040 SLP065 T10851118" },
+		{
+		"date": {
+		"pretty": "2:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "14",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "7:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "19",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-8.0", "tempi":"17.6","dewptm":"-11.2", "dewpti":"11.8","hum":"78","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"20","wdire":"NNE","vism":"-9999.0", "visi":"-9999.0","pressurem":"1004.7", "pressurei":"29.67","windchillm":"-14.2", "windchilli":"6.4","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 041900Z AUTO 02008KT M08/M11 RMK AO1 SOG 39 8051 SLP047 T10801112" },
+		{
+		"date": {
+		"pretty": "3:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "15",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "8:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "20",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-7.6", "tempi":"18.3","dewptm":"-10.9", "dewpti":"12.4","hum":"78","wspdm":"13.0", "wspdi":"8.1","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"20","wdire":"NNE","vism":"-9999.0", "visi":"-9999.0","pressurem":"1003.4", "pressurei":"29.63","windchillm":"-13.2", "windchilli":"8.2","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 042000Z AUTO 02007KT M08/M11 RMK AO1 SOG 39 6051 SLP034 T10761109" },
+		{
+		"date": {
+		"pretty": "4:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "16",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "21",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-7", "tempi":"19","dewptm":"-11", "dewpti":"12","hum":"65","wspdm":"16.7", "wspdi":"10.4","wgustm":"", "wgusti":"","wdird":"10","wdire":"North","vism":"", "visi":"","pressurem":"1002", "pressurei":"29.59","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 04214 71612 26/// /0109 11071 21110 39928 40020 56045 333 60007" },
+		{
+		"date": {
+		"pretty": "4:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "16",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "9:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "21",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-7.1", "tempi":"19.2","dewptm":"-11.0", "dewpti":"12.2","hum":"74","wspdm":"16.7", "wspdi":"10.4","wgustm":"33.3", "wgusti":"20.7","wdird":"10","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1002.0", "pressurei":"29.59","windchillm":"-13.5", "windchilli":"7.7","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 042100Z AUTO 01009G18KT M07/M11 RMK AO1 SOG 39 6045 PK WND 01018/2052 SLP020 T10711110" },
+		{
+		"date": {
+		"pretty": "5:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "17",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "10:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "22",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-6.7", "tempi":"19.9","dewptm":"-10.3", "dewpti":"13.5","hum":"76","wspdm":"14.8", "wspdi":"9.2","wgustm":"27.8", "wgusti":"17.3","wdird":"360","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"1000.4", "pressurei":"29.55","windchillm":"-12.6", "windchilli":"9.3","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 042200Z AUTO 36008G15KT M07/M10 RMK AO1 SLP004 T10671103 58042" },
+		{
+		"date": {
+		"pretty": "6:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "18",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "11:00 PM GMT on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "23",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-7.0", "tempi":"19.4","dewptm":"-10.0", "dewpti":"14.0","hum":"80","wspdm":"13.0", "wspdi":"8.1","wgustm":"31.5", "wgusti":"19.6","wdird":"360","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"999.2", "pressurei":"29.51","windchillm":"-12.5", "windchilli":"9.5","heatindexm":"-9999", "heatindexi":"-9999","precipm":"-9999.00", "precipi":"-9999.00","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 042300Z AUTO 36007G17KT M07/M10 RMK AO1 SOG 41 6041 PK WND 01017/2253 SLP992 T10701100" },
+		{
+		"date": {
+		"pretty": "7:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "19",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "12:00 AM GMT on January 05, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "05",
+		"hour": "00",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-7", "tempi":"19","dewptm":"-10", "dewpti":"14","hum":"74","wspdm":"13.0", "wspdi":"8.1","wgustm":"", "wgusti":"","wdird":"","wdire":"","vism":"", "visi":"","pressurem":"999", "pressurei":"29.50","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05004 71612 16/// /0007 11073 21099 39898 49989 56030 60001 333 11066 21118 70002" },
+		{
+		"date": {
+		"pretty": "8:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "20",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "1:00 AM GMT on January 05, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "05",
+		"hour": "01",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-7.8", "tempi":"18.0","dewptm":"-9.6", "dewpti":"14.7","hum":"87","wspdm":"13.0", "wspdi":"8.1","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"360","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"998.6", "pressurei":"29.49","windchillm":"-13.5", "windchilli":"7.7","heatindexm":"-9999", "heatindexi":"-9999","precipm":"0.3", "precipi":"0.01","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 050100Z AUTO 36007KT M08/M10 RMK AO1 3PAST HR SOG 42 6018 SLP986 P0001 T10781096 50003" },
+		{
+		"date": {
+		"pretty": "9:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "21",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "2:00 AM GMT on January 05, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "05",
+		"hour": "02",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-8.3", "tempi":"17.1","dewptm":"-10.0", "dewpti":"14.0","hum":"88","wspdm":"14.8", "wspdi":"9.2","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"360","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"997.5", "pressurei":"29.46","windchillm":"-14.6", "windchilli":"5.8","heatindexm":"-9999", "heatindexi":"-9999","precipm":"0.8", "precipi":"0.03","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 050200Z AUTO 36008KT M08/M10 RMK AO1 7PAST HR SOG 45 8017 SLP975 P0003 T10831100 50009" },
+		{
+		"date": {
+		"pretty": "10:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "22",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 AM GMT on January 05, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "05",
+		"hour": "03",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-8", "tempi":"17","dewptm":"-10", "dewpti":"13","hum":"80","wspdm":"11.1", "wspdi":"6.9","wgustm":"", "wgusti":"","wdird":"350","wdire":"North","vism":"", "visi":"","pressurem":"996", "pressurei":"29.43","windchillm":"-999", "windchilli":"-999","heatindexm":"-9999", "heatindexi":"-9999","precipm":"", "precipi":"","conds":"","icon":"","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"AAXX 05034 71612 27/// /3506 11085 21103 39874 49965 58024 7//4/ 333 60017" },
+		{
+		"date": {
+		"pretty": "10:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "22",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "3:00 AM GMT on January 05, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "05",
+		"hour": "03",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-7.5", "tempi":"18.5","dewptm":"-10.3", "dewpti":"13.5","hum":"81","wspdm":"11.1", "wspdi":"6.9","wgustm":"-9999.0", "wgusti":"-9999.0","wdird":"350","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"996.5", "pressurei":"29.43","windchillm":"-12.6", "windchilli":"9.3","heatindexm":"-9999", "heatindexi":"-9999","precipm":"0.3", "precipi":"0.01","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 050300Z AUTO 35006KT M08/M10 RMK AO1 2PAST HR SOG 53 8024 PK WND 35018/0244 SLP965 P0001 T10751103 50012" },
+		{
+		"date": {
+		"pretty": "11:00 PM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "23",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"utcdate": {
+		"pretty": "4:00 AM GMT on January 05, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "05",
+		"hour": "04",
+		"min": "00",
+		"tzname": "UTC"
+		},
+		"tempm":"-9.1", "tempi":"15.6","dewptm":"-11.1", "dewpti":"12.0","hum":"86","wspdm":"14.8", "wspdi":"9.2","wgustm":"29.6", "wgusti":"18.4","wdird":"360","wdire":"North","vism":"-9999.0", "visi":"-9999.0","pressurem":"996.4", "pressurei":"29.43","windchillm":"-15.6", "windchilli":"4.0","heatindexm":"-9999", "heatindexi":"-9999","precipm":"0.3", "precipi":"0.01","conds":"Unknown","icon":"unknown","fog":"0","rain":"0","snow":"0","hail":"0","thunder":"0","tornado":"0","metar":"METAR CWTA 050400Z AUTO 36008G16KT M09/M11 RMK AO1 2PAST HR SOG 55 6022 PK WND 00017/0335 SLP964 P0001 T10911111 50014" }
+		],
+		"dailysummary": [
+		{ "date": {
+		"pretty": "12:00 AM EST on January 04, 2018",
+		"year": "2018",
+		"mon": "01",
+		"mday": "04",
+		"hour": "00",
+		"min": "00",
+		"tzname": "America/Montreal"
+		},
+		"fog":"0","rain":"0","snow":"0","snowfallm":"", "snowfalli":"","monthtodatesnowfallm":"", "monthtodatesnowfalli":"","since1julsnowfallm":"", "since1julsnowfalli":"","snowdepthm":"", "snowdepthi":"","hail":"0","thunder":"0","tornado":"0","meantempm":"-9", "meantempi":"14","meandewptm":"-12", "meandewpti":"11","meanpressurem":"1007.61", "meanpressurei":"29.76","meanwindspdm":"7", "meanwindspdi":"4","meanwdire":"North","meanwdird":"7","meanvism":"", "meanvisi":"","humidity":"79","maxtempm":"-6", "maxtempi":"20","mintempm":"-12", "mintempi":"9","maxhumidity":"88","minhumidity":"65","maxdewptm":"-10", "maxdewpti":"15","mindewptm":"-14", "mindewpti":"8","maxpressurem":"1017", "maxpressurei":"30.04","minpressurem":"996", "minpressurei":"29.43","maxwspdm":"17", "maxwspdi":"10","minwspdm":"2", "minwspdi":"1","maxvism":"", "maxvisi":"","minvism":"", "minvisi":"","gdegreedays":"0","heatingdegreedays":"50","coolingdegreedays":"0","precipm":"2.0", "precipi":"0.08","precipsource":"Precip6GroupSynop","heatingdegreedaysnormal":"","monthtodateheatingdegreedays":"","monthtodateheatingdegreedaysnormal":"","since1sepheatingdegreedays":"","since1sepheatingdegreedaysnormal":"","since1julheatingdegreedays":"","since1julheatingdegreedaysnormal":"","coolingdegreedaysnormal":"","monthtodatecoolingdegreedays":"","monthtodatecoolingdegreedaysnormal":"","since1sepcoolingdegreedays":"","since1sepcoolingdegreedaysnormal":"","since1jancoolingdegreedays":"","since1jancoolingdegreedaysnormal":"" }
+		]
+	}
+}
