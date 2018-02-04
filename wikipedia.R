@@ -16,11 +16,12 @@ to.numeric <- function(chr.vec){
   as.numeric(gsub(",", "", gsub("−", "-", chr.vec)))
 }
 abbrev.vec <- c(
-  Tustin="Tustin,_California",
-  Havasu="Lake_Havasu_City,_Arizona",
-  Berkeley="Berkeley,_California",
-  "Paris",
-  "Tokyo",
+  NULL
+  ## Tustin="Tustin,_California",
+  ## Havasu="Lake_Havasu_City,_Arizona",
+  ## Berkeley="Berkeley,_California",
+  ## "Paris",
+  ## "Tokyo",
   ## "Sherbrooke",
   ## SherbrookeFR="https://fr.wikipedia.org/wiki/Sherbrooke",
   ## Santa_Cruz="Santa_Cruz,_California",
@@ -34,14 +35,14 @@ abbrev.vec <- c(
   ## "Vancouver",
   ## Halifax="Halifax,_Nova_Scotia",
   ## "Minneapolis",
-  "Montreal"
+  ##"Montreal"
  ##,"Tahiti"="Papeete"
  ##,"Puerto_Rico"
  ##,"Buenos_Aires"
  ,Flagstaff="Flagstaff,_Arizona"
- ,Waterloo="Waterloo,_Ontario"
+ ##,Waterloo="Waterloo,_Ontario"
  ,"San_Diego"
-  ,"Toulouse"
+ ##,"Toulouse"
  ##,"Quebec"="https://fr.wikipedia.org/wiki/Québec_(ville)"
 )
 url.vec <- paste0(
@@ -194,6 +195,19 @@ show.dt <- climate.dt[variable %in% show.vars]
 show.wide <- dcast(show.dt, city + month.fac ~ variable)
 breaks.vec <- seq(1, 12, by=2)
 
+
+f <- function(y, what, yname){
+  yval <- show.wide[[yname]]
+  show.wide[, data.table(
+    city, month.fac, y, what, yval, yname)]
+}
+lines.dt <- rbind(
+  f("rainfall (mm)", "Monthly average", "Average rainfall (mm)"),
+  f("sunshine (hours)", "Monthly average", "Mean monthly sunshine hours"),
+  f("snowfall (cm)", "Monthly average", "Average snowfall (cm)"),
+  f("temperature (°C)", "Record high/low", "Record high (°C)"),
+  f("temperature (°C)", "Record high/low", "Record low (°C)"))
+
 ggplot()+
   geom_ribbon(aes(
     as.numeric(month.fac),
@@ -207,44 +221,10 @@ ggplot()+
       what="Average daily high/low"))+
   geom_line(aes(
     as.numeric(month.fac),
-    `Record high (°C)`,
+    yval,
+    group=yname,
     color=what),
-    data=data.table(
-      show.wide,
-      y="temperature (°C)",
-      what="Record high/low"))+
-  geom_line(aes(
-    as.numeric(month.fac),
-    `Record low (°C)`,
-    color=what),
-    data=data.table(
-      show.wide,
-      y="temperature (°C)",
-      what="Record high/low"))+
-  geom_line(aes(
-    as.numeric(month.fac),
-    `Average rainfall (mm)`,
-    color=what),
-    data=data.table(
-      show.wide,
-      y="rainfall (mm)",
-      what="Monthly average"))+
-  geom_line(aes(
-    as.numeric(month.fac),
-    `Average snowfall (cm)`,
-    color=what),
-    data=data.table(
-      show.wide,
-      y="snowfall (cm)",
-      what="Monthly average"))+
-  geom_line(aes(
-    as.numeric(month.fac),
-    `Mean monthly sunshine hours`,
-    color=what),
-    data=data.table(
-      show.wide,
-      y="sunshine (hours)",
-      what="Monthly average"))+
+    data=lines.dt)+
   theme_bw()+
   theme(
     panel.margin=grid::unit(0, "lines"),
@@ -255,6 +235,41 @@ ggplot()+
     "Record high/low"="grey"))+
   scale_fill_manual("", values=c(
     "Average daily high/low"="black"))+
+  scale_x_continuous(
+    "Month",
+    breaks=breaks.vec,
+    labels=month.str[breaks.vec])+
+  scale_y_continuous(
+    "")
+
+city.colors <- c(
+  Montreal="black",
+  San_Diego="orange",
+  Flagstaff="violet")
+ggplot()+
+  geom_ribbon(aes(
+    as.numeric(month.fac),
+    fill=city,
+    ymax=`Average high (°C)`,
+    ymin=`Average low (°C)`),
+    alpha=0.5,
+    data=data.table(
+      show.wide,
+      y="temperature (°C)",
+      what="Average daily high/low"))+
+  geom_line(aes(
+    as.numeric(month.fac),
+    yval,
+    group=paste(city, yname),
+    color=city),
+    data=lines.dt)+
+  theme_bw()+
+  theme(
+    panel.margin=grid::unit(0, "lines"),
+    legend.position="bottom")+
+  facet_grid(y ~ ., scales="free")+
+  scale_color_manual("", values=city.colors)+
+  scale_fill_manual("", values=city.colors)+
   scale_x_continuous(
     "Month",
     breaks=breaks.vec,
