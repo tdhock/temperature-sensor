@@ -17,33 +17,40 @@ to.numeric <- function(chr.vec){
 }
 abbrev.vec <- c(
   NULL
-  ## Tustin="Tustin,_California",
-  ## Havasu="Lake_Havasu_City,_Arizona",
-  ## Berkeley="Berkeley,_California",
-  ## "Paris",
-  ## "Tokyo",
-  ## "Sherbrooke",
-  ## SherbrookeFR="https://fr.wikipedia.org/wiki/Sherbrooke",
-  ## Santa_Cruz="Santa_Cruz,_California",
-  ## "Brisbane",
-  ## "Singapore",
-  ## "Hangzhou",
-  ## "Tehran",
-  ##  Kuwait="Kuwait_City",
-  ## "Calgary",
-  ## "Toronto",
-  ## "Vancouver",
-  ## Halifax="Halifax,_Nova_Scotia",
-  ## "Minneapolis",
+ ##,Tustin="Tustin,_California"
+  ## ,Havasu="Lake_Havasu_City,_Arizona"
+  ## ,Berkeley="Berkeley,_California"
+  ## ,"Paris"
+  ## ,"Tokyo"
+  ## ,"Sherbrooke"
+  ## ,SherbrookeFR="https://fr.wikipedia.org/wiki/Sherbrooke"
+  ## ,Santa_Cruz="Santa_Cruz,_California"
+  ## ,"Brisbane"
+  ## ,"Singapore"
+  ## ,"Hangzhou"
+  ## ,"Tehran"
+  ## ,Kuwait="Kuwait_City"
+  ## ,"Calgary"
+  ## ,"Toronto"
+  ## ,"Vancouver"
+  ## ,Halifax="Halifax,_Nova_Scotia"
+  ## ,"Minneapolis"
+  ##,"Guadalajara"
+  ,"Tromso"
+  ##,"Pau"="Pau,_Pyrénées-Atlantiques"
   ,"Montreal"
- ##,"Tahiti"="Papeete"
- ##,"Puerto_Rico"
- ##,"Buenos_Aires"
- ##,Flagstaff="Flagstaff,_Arizona"
- ##,Waterloo="Waterloo,_Ontario"
- ,"San_Diego"
- ##,"Toulouse"
- ##,"Quebec"="https://fr.wikipedia.org/wiki/Québec_(ville)"
+ ##,"Alicante"
+  ##,"Riverside"="Riverside,_California"
+ ##,"Los_Angeles"
+  ##,"Tahiti"="Papeete"
+  ##,"Puerto_Rico"
+  ##,"Buenos_Aires"
+  ##,Flagstaff="Flagstaff,_Arizona"
+  ,"Fort_Nelson"="Fort_Nelson,_British_Columbia"
+  ##,Waterloo="Waterloo,_Ontario"
+ ##,"San_Diego"
+  ##,"Toulouse"
+  ##,"Quebec"="https://fr.wikipedia.org/wiki/Québec_(ville)"
 )
 url.vec <- paste0(
   ifelse(
@@ -183,10 +190,12 @@ for(city in names(url.vec)){
 }
 climate.dt <- do.call(rbind, climate.dt.list)
 counts.dt <- dcast(climate.dt, city ~ variable)
-counts.dt[`Average precipitation (mm)`==0 & `Average rainfall (mm)`>0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)]
-(only.prec <- counts.dt[`Average precipitation (mm)`>0 & `Average rainfall (mm)`==0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)])
-counts.dt[`Average precipitation (mm)`>0 & `Average rainfall (mm)`>0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)]#cities in Canada report both rainfall and precipitation.
-climate.dt[city %in% only.prec$city & variable=="Average precipitation (mm)", variable := "Average rainfall (mm)"]
+if(all(c("Average rainfall (mm)", "Average precipitation (mm)") %in% names(counts.dt))){
+  counts.dt[`Average precipitation (mm)`==0 & `Average rainfall (mm)`>0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)]
+  (only.prec <- counts.dt[`Average precipitation (mm)`>0 & `Average rainfall (mm)`==0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)])
+  counts.dt[`Average precipitation (mm)`>0 & `Average rainfall (mm)`>0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)]#cities in Canada report both rainfall and precipitation.
+  climate.dt[city %in% only.prec$city & variable=="Average precipitation (mm)", variable := "Average rainfall (mm)"]
+}
 climate.dt[, list(values=.N), by=variable][order(values)]
 show.vars <- c(
   "Average high (°C)", "Average low (°C)",
@@ -200,8 +209,10 @@ breaks.vec <- seq(1, 12, by=2)
 
 f <- function(y, what, yname){
   yval <- show.wide[[yname]]
-  show.wide[, data.table(
-    city, month.fac, y, what, yval, yname)]
+  if(is.numeric(yval)){
+    show.wide[, data.table(
+      city, month.fac, y, what, yval, yname)]
+  }
 }
 lines.dt <- rbind(
   f("rainfall (mm)", "Monthly average", "Average rainfall (mm)"),
@@ -247,6 +258,14 @@ ggplot()+
 city.colors <- c(
   Montreal="black",
   San_Diego="orange",
+  Tustin="orange",
+  Guadalajara="red",
+  Los_Angeles="blue",
+  Fort_Nelson="deepskyblue",
+  Pau="pink",
+  Alicante="red",
+  Riverside="blue",
+  Tromso="green",
   Flagstaff="violet")
 ggplot()+
   geom_ribbon(aes(
