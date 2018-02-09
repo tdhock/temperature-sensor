@@ -35,11 +35,11 @@ abbrev.vec <- c(
   ## "Vancouver",
   ## Halifax="Halifax,_Nova_Scotia",
   ## "Minneapolis",
-  ##"Montreal"
+  ,"Montreal"
  ##,"Tahiti"="Papeete"
  ##,"Puerto_Rico"
  ##,"Buenos_Aires"
- ,Flagstaff="Flagstaff,_Arizona"
+ ##,Flagstaff="Flagstaff,_Arizona"
  ##,Waterloo="Waterloo,_Ontario"
  ,"San_Diego"
  ##,"Toulouse"
@@ -51,6 +51,8 @@ url.vec <- paste0(
     "",
     "https://en.wikipedia.org/wiki/"),
   abbrev.vec)
+
+if(is.null(names(abbrev.vec)))names(abbrev.vec) <- rep("", length(abbrev.vec))
 names(url.vec) <- ifelse(
   names(abbrev.vec)=="",
   abbrev.vec,
