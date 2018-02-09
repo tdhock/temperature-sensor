@@ -29,24 +29,32 @@ abbrev.vec <- c(
   ## ,"Singapore"
   ## ,"Hangzhou"
   ## ,"Tehran"
-  ## ,Kuwait="Kuwait_City"
-  ## ,"Calgary"
-  ## ,"Toronto"
+ ##,Kuwait="Kuwait_City"
+   ## ,"Calgary"
+   ## ,"Toronto"
   ## ,"Vancouver"
   ## ,Halifax="Halifax,_Nova_Scotia"
   ## ,"Minneapolis"
   ##,"Guadalajara"
-  ,"Tromso"
+  ##,"Tromso"
   ##,"Pau"="Pau,_Pyrénées-Atlantiques"
   ,"Montreal"
  ##,"Alicante"
   ##,"Riverside"="Riverside,_California"
- ##,"Los_Angeles"
+  ##,"Los_Angeles"
+  ##,"Geneva"
+ ##,"Rio_de_Janeiro"
+  ##,Panama="Panama_City"
+  ##,"Timbuktu"
+  ##,"Dubai"
+ ,"New_Orleans"
+  ,"New_Delhi"
+ ##,"Vostok"="Vostok_Station"
   ##,"Tahiti"="Papeete"
   ##,"Puerto_Rico"
   ##,"Buenos_Aires"
   ##,Flagstaff="Flagstaff,_Arizona"
-  ,"Fort_Nelson"="Fort_Nelson,_British_Columbia"
+ ##,"Fort_Nelson"="Fort_Nelson,_British_Columbia"
   ##,Waterloo="Waterloo,_Ontario"
  ##,"San_Diego"
   ##,"Toulouse"
@@ -257,15 +265,26 @@ ggplot()+
 
 city.colors <- c(
   Montreal="black",
+  Kuwait="purple",
   San_Diego="orange",
+  Rio_de_Janeiro="orange",
+  Timbuktu="orange",
+  Panama="orange",
   Tustin="orange",
   Guadalajara="red",
   Los_Angeles="blue",
   Fort_Nelson="deepskyblue",
   Pau="pink",
   Alicante="red",
+  Calgary="red",
   Riverside="blue",
   Tromso="green",
+  Toronto="blue",
+  Geneva="red",
+  Dubai="red",
+  Vostok="blue",
+  New_Delhi="orange",
+  New_Orleans="blue",
   Flagstaff="violet")
 ggplot()+
   geom_ribbon(aes(
@@ -296,4 +315,5 @@ ggplot()+
     breaks=breaks.vec,
     labels=month.str[breaks.vec])+
   scale_y_continuous(
-    "")
+    "",
+    breaks=seq(-100, 1000, by=10))
