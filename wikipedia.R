@@ -3,7 +3,8 @@ works_with_R(
   ggplot2="2.2.1",
   namedCapture="2017.6.1",
   htmltab="0.7.1",
-  data.table="1.10.4")
+  ## data.table 1.10.4 has a bug with our caching, so need this new version:
+  "Rdatatable/data.table@c4ae884a6902d7e9f5fb84ee1c785ff8f00187e6")
 
 pattern <- paste0(
   "(?<varname>.*)",
@@ -47,9 +48,9 @@ abbrev.vec <- c(
   ##,Panama="Panama_City"
   ##,"Timbuktu"
   ##,"Dubai"
- ,"New_Orleans"
-  ,"New_Delhi"
- ##,"Vostok"="Vostok_Station"
+ ##,"New_Orleans"
+ ##,"New_Delhi"
+ ,"Vostok"="Vostok_Station"
   ##,"Tahiti"="Papeete"
   ##,"Puerto_Rico"
   ##,"Buenos_Aires"
@@ -167,6 +168,7 @@ parser.fun.list <- list(en=function(city.html){
     nrow(raw.mat), ncol(raw.mat),  
     dimnames=list(var.trans.vec[rownames(raw.mat)]))
 })
+
 climate.dt.list <- list()
 for(city in names(url.vec)){
   city.html <- file.path("wikipedia", paste0(city, ".html"))
@@ -196,8 +198,9 @@ for(city in names(url.vec)){
     city=factor(city, names(url.vec)),
     tall.dt)
 }
+system("git add wikipedia/*")
 climate.dt <- do.call(rbind, climate.dt.list)
-counts.dt <- dcast(climate.dt, city ~ variable)
+dim(counts.dt <- dcast(climate.dt, city ~ variable, length))
 if(all(c("Average rainfall (mm)", "Average precipitation (mm)") %in% names(counts.dt))){
   counts.dt[`Average precipitation (mm)`==0 & `Average rainfall (mm)`>0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)]
   (only.prec <- counts.dt[`Average precipitation (mm)`>0 & `Average rainfall (mm)`==0, list(city, `Average rainfall (mm)`,`Average precipitation (mm)`)])
@@ -286,7 +289,7 @@ city.colors <- c(
   New_Delhi="orange",
   New_Orleans="blue",
   Flagstaff="violet")
-ggplot()+
+gg <- ggplot()+
   geom_ribbon(aes(
     as.numeric(month.fac),
     fill=city,
@@ -317,3 +320,4 @@ ggplot()+
   scale_y_continuous(
     "",
     breaks=seq(-100, 1000, by=10))
+print(gg)
