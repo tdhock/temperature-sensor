@@ -50,11 +50,12 @@ abbrev.vec <- c(
   ##,"Dubai"
  ##,"New_Orleans"
  ##,"New_Delhi"
- ,"Vostok"="Vostok_Station"
+ ##,"Vostok"="Vostok_Station"
   ##,"Tahiti"="Papeete"
   ##,"Puerto_Rico"
   ##,"Buenos_Aires"
-  ##,Flagstaff="Flagstaff,_Arizona"
+ ##,Flagstaff="Flagstaff,_Arizona"
+  ,"Aarhus"
  ##,"Fort_Nelson"="Fort_Nelson,_British_Columbia"
   ##,Waterloo="Waterloo,_Ontario"
  ##,"San_Diego"
@@ -271,6 +272,7 @@ city.colors <- c(
   Kuwait="purple",
   San_Diego="orange",
   Rio_de_Janeiro="orange",
+  Aarhus="blue",
   Timbuktu="orange",
   Panama="orange",
   Tustin="orange",
