@@ -1,18 +1,21 @@
-works_with_R(
-  "3.4.2",
-  ggplot2="2.2.1",
-  namedCapture="2017.6.1",
-  htmltab="0.7.1",
-  ## data.table 1.10.4 has a bug with our caching, so need this new version:
-  "Rdatatable/data.table@c4ae884a6902d7e9f5fb84ee1c785ff8f00187e6")
+library(ggplot2)
+library(namedCapture)
+library(htmltab)
+library(data.table)
 
-pattern <- paste0(
+varname.pattern <- paste0(
   "(?<varname>.*)",
   " ",
   "(?<before>[^ (]+)",
   " [(]",
   "(?<inside>[^)%]+)",
   "[)]")
+data.pattern <- paste0(
+  "(?<before>.*?)",
+  "[(]",
+  "(?<inside>[^)%]+)",
+  "[)]")
+options(namedCapture.engine="PCRE")
 to.numeric <- function(chr.vec){
   as.numeric(gsub(",", "", gsub("−", "-", chr.vec)))
 }
@@ -54,8 +57,10 @@ abbrev.vec <- c(
   ##,"Tahiti"="Papeete"
   ##,"Puerto_Rico"
   ##,"Buenos_Aires"
- ##,Flagstaff="Flagstaff,_Arizona"
-  ,"Aarhus"
+##  ,Flagstaff="Flagstaff,_Arizona"
+ ,Burlington="Burlington,_Vermont"
+ ##,Hilo="Hilo,_Hawaii"
+ ## ,"Aarhus"
  ##,"Fort_Nelson"="Fort_Nelson,_British_Columbia"
   ##,Waterloo="Waterloo,_Ontario"
  ##,"San_Diego"
@@ -79,9 +84,9 @@ month.str <- c(
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 parser.fun.list <- list(en=function(city.html){
   tryCatch({
-    df <- htmltab(city.html, which="//th[text()='Month']/ancestor::table")
+    df <- htmltab(city.html, which="//th[text()='Month\n']/ancestor::table")
   }, error=function(e){
-    unlink(city.html)
+    ##unlink(city.html)
     browseURL(u)
     stop(
       "unable to find climate data in web page ",
@@ -92,7 +97,7 @@ parser.fun.list <- list(en=function(city.html){
   col.name.vec <- sub(".*> ", "", names(df))
   row.indices <- -grep("^Source", df[,1])
   row.name.vec <- df[row.indices, 1]
-  row.name.mat <- str_match_named(row.name.vec, pattern)
+  row.name.mat <- str_match_named(row.name.vec, varname.pattern)
   col.indices <- 2:13
   is.C <- row.name.mat=="°C"
   keep.name <- if(any(is.C[, "inside"], na.rm=TRUE)){
@@ -103,7 +108,7 @@ parser.fun.list <- list(en=function(city.html){
     stop("no °C in or before parentheses")
   }
   chr.mat <- unname(as.matrix(df[row.indices, col.indices]))
-  data.match.mat <- str_match_named(paste0(" ", chr.mat), pattern, list(
+  data.match.mat <- str_match_named(paste0(" ", chr.mat), data.pattern, list(
     before=to.numeric,
     inside=to.numeric))
   not.na <- !is.na(data.match.mat[,1])
@@ -123,7 +128,7 @@ parser.fun.list <- list(en=function(city.html){
   tryCatch({
     df <- htmltab(
       city.html,
-      which="//th[text()='Mois']/ancestor::table")#for record
+      which="//th[text()='Month']/ancestor::table")#for record
   }, error=function(e){
     unlink(city.html)
     browseURL(u)
@@ -233,7 +238,7 @@ lines.dt <- rbind(
   f("temperature (°C)", "Record high/low", "Record high (°C)"),
   f("temperature (°C)", "Record high/low", "Record low (°C)"))
 
-ggplot()+
+gg.panels <- ggplot()+
   geom_ribbon(aes(
     as.numeric(month.fac),
     fill=what,
@@ -252,7 +257,7 @@ ggplot()+
     data=lines.dt)+
   theme_bw()+
   theme(
-    panel.margin=grid::unit(0, "lines"),
+    panel.spacing=grid::unit(0, "lines"),
     legend.position="bottom")+
   facet_grid(y ~ city, scales="free")+
   scale_color_manual("", values=c(
@@ -266,9 +271,15 @@ ggplot()+
     labels=month.str[breaks.vec])+
   scale_y_continuous(
     "")
+png("figure-wikipedia-Montreal-Burlington-Hilo-Flagstaff.png", 8, 8, units="in", res=100)
+print(gg.panels)
+dev.off()
+
 
 city.colors <- c(
   Montreal="black",
+  Hilo="orange",
+  Burlington="green",
   Kuwait="purple",
   San_Diego="orange",
   Rio_de_Janeiro="orange",
@@ -310,7 +321,7 @@ gg <- ggplot()+
     data=lines.dt)+
   theme_bw()+
   theme(
-    panel.margin=grid::unit(0, "lines"),
+    panel.spacing=grid::unit(0, "lines"),
     legend.position="bottom")+
   facet_grid(y ~ ., scales="free")+
   scale_color_manual("", values=city.colors)+
@@ -322,4 +333,6 @@ gg <- ggplot()+
   scale_y_continuous(
     "",
     breaks=seq(-100, 1000, by=10))
+png("figure-wikipedia-Montreal-Burlington.png", 4, 6, units="in", res=100)
 print(gg)
+dev.off()
