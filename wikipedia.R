@@ -57,8 +57,9 @@ abbrev.vec <- c(
   ##,"Tahiti"="Papeete"
   ##,"Puerto_Rico"
   ##,"Buenos_Aires"
-##  ,Flagstaff="Flagstaff,_Arizona"
- ,Burlington="Burlington,_Vermont"
+ ,Flagstaff="Flagstaff,_Arizona"
+  ,Utica="Utica,_New_York"
+ ##,Burlington="Burlington,_Vermont"
  ##,Hilo="Hilo,_Hawaii"
  ## ,"Aarhus"
  ##,"Fort_Nelson"="Fort_Nelson,_British_Columbia"
@@ -223,7 +224,6 @@ show.dt <- climate.dt[variable %in% show.vars]
 show.wide <- dcast(show.dt, city + month.fac ~ variable)
 breaks.vec <- seq(1, 12, by=2)
 
-
 f <- function(y, what, yname){
   yval <- show.wide[[yname]]
   if(is.numeric(yval)){
@@ -271,10 +271,9 @@ gg.panels <- ggplot()+
     labels=month.str[breaks.vec])+
   scale_y_continuous(
     "")
-png("figure-wikipedia-Montreal-Burlington-Hilo-Flagstaff.png", 8, 8, units="in", res=100)
+##png("figure-wikipedia-Montreal-Burlington-Hilo-Flagstaff.png", 8, 8, units="in", res=100)
 print(gg.panels)
-dev.off()
-
+##dev.off()
 
 city.colors <- c(
   Montreal="black",
@@ -301,8 +300,14 @@ city.colors <- c(
   Vostok="blue",
   New_Delhi="orange",
   New_Orleans="blue",
+  Utica="green",
   Flagstaff="violet")
 gg <- ggplot()+
+  geom_rect(aes(
+    xmin=xmin, xmax=xmax,
+    ymin=ymin, ymax=ymax),
+    data=data.table(ymin=-Inf, ymax=Inf, xmin=5, xmax=7),
+    fill="grey")+
   geom_ribbon(aes(
     as.numeric(month.fac),
     fill=city,
@@ -333,6 +338,6 @@ gg <- ggplot()+
   scale_y_continuous(
     "",
     breaks=seq(-100, 1000, by=10))
-png("figure-wikipedia-Montreal-Burlington.png", 4, 6, units="in", res=100)
+png("figure-wikipedia-Montreal-Flagstaff-Utica.png", 4, 6, units="in", res=100)
 print(gg)
 dev.off()
